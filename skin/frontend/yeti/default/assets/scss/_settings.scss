@@ -1,3 +1,7 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
 //
 // FOUNDATION SETTINGS
 //
@@ -114,7 +118,7 @@ $row-width: rem-calc(1280);
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-// $header-font-weight: 300;
+// $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
 // $header-line-height: 1.4;
@@ -217,7 +221,7 @@ $row-width: rem-calc(1280);
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: #efefef ;
+// $accordion-navigation-bg-color: #efefef  ;
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: #222;
@@ -412,7 +416,7 @@ $row-width: rem-calc(1280);
 // $f-dropdown-font-size: rem-calc(14);
 // $f-dropdown-list-padding: rem-calc(5, 10);
 // $f-dropdown-line-height: rem-calc(18);
-// $f-dropdown-list-hover-bg: #eeeeee ;
+// $f-dropdown-list-hover-bg: #eeeeee  ;
 // $dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
@@ -588,7 +592,7 @@ $row-width: rem-calc(1280);
 
 // Keystrokes
 
-// $include-html-type-classes: $include-html-classes;
+// $include-html-keystroke-classes: $include-html-classes;
 
 // We use these to control text styles.
 // $keystroke-font: "Consolas", "Menlo", "Courier", monospace;
@@ -801,7 +805,7 @@ $row-width: rem-calc(1280);
 // $price-title-font-family: $body-font-family;
 
 // We use these to control the price styles
-// $price-money-bg: #f6f6f6 ;
+// $price-money-bg: #f6f6f6  ;
 // $price-money-padding: rem-calc(15 20);
 // $price-money-align: center;
 // $price-money-color: #333;
@@ -839,7 +843,7 @@ $row-width: rem-calc(1280);
 
 // We use this to se the prog bar height
 // $progress-bar-height: rem-calc(25);
-// $progress-bar-color: #f6f6f6 ;
+// $progress-bar-color: #f6f6f6  ;
 
 // We use these to control the border styles
 // $progress-bar-border-color: scale-color(#fff, $lightness: -20%);
@@ -1029,7 +1033,7 @@ $row-width: rem-calc(1280);
 
 // These control the background color for the table and even rows
 // $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9 ;
+// $table-even-row-bg: #f9f9f9  ;
 
 // These control the table cell border style
 // $table-border-style: solid;
@@ -1037,7 +1041,7 @@ $row-width: rem-calc(1280);
 // $table-border-color: #ddd;
 
 // These control the table head styles
-// $table-head-bg: #f5f5f5 ;
+// $table-head-bg: #f5f5f5  ;
 // $table-head-font-size: rem-calc(14);
 // $table-head-font-color: #222;
 // $table-head-font-weight: bold;
@@ -1060,7 +1064,7 @@ $row-width: rem-calc(1280);
 // $include-html-tabs-classes: $include-html-classes;
 
 // $tabs-navigation-padding: rem-calc(16);
-// $tabs-navigation-bg-color: #efefef ;
+// $tabs-navigation-bg-color: #efefef  ;
 // $tabs-navigation-active-bg-color: #fff;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
 // $tabs-navigation-font-color: #222;
@@ -1151,12 +1155,15 @@ $row-width: rem-calc(1280);
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727 ;
+// $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
+// $topbar-link-text-transform: none;
+// $topbar-link-padding: $topbar-height / 3;
 
 // $topbar-button-font-size: 0.75rem;
+// $topbar-button-top: 7px;
 
 // $topbar-dropdown-label-color: #777;
 // $topbar-dropdown-label-text-transform: uppercase;
@@ -1180,7 +1187,7 @@ $row-width: rem-calc(1280);
 // $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
 
 // Divider Styles
-// $topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 13%);
+// $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
 
 // Sticky Class
@@ -1192,3 +1199,5 @@ $row-width: rem-calc(1280);
 //
 
 // $include-html-visibility-classes: $include-html-classes;
+// $include-table-visibility-classes: true;
+// $include-legacy-visibility-classes: true;
