@@ -1,0 +1,17 @@
+/////////////////////////////////////
+// Misc
+/////////////////////////////////////
+
+.label-price {
+	font-size: rem-calc(14);
+	text-transform: uppercase;
+	color: $gray;
+}
+
+.nobr {
+	white-space: nowrap !important;
+}
+
+table {
+	width: 100%;
+}

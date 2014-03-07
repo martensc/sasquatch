@@ -1,0 +1,45 @@
+/////////////////////////////////////
+// Forms
+/////////////////////////////////////
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+.no-display {
+	display: none !important;
+}
+
+p.required {
+	font-size: rem-calc(13);
+	font-style: italic;
+	color: $alert-color;
+}
+
+em.required {
+	color: $alert-color;
+}
+
+label.required em {
+	color: $alert-color;
+	margin-right: rem-calc(3);
+}
+
+p.note {
+	font-size: rem-calc(13);
+	font-style: italic;
+	color: $gray;
+}
+
+input,
+select {
+
+	&.validation-failed {
+		margin-bottom: 0;
+	}
+}
+
+.validation-advice {
+	@extend small.error;
+}

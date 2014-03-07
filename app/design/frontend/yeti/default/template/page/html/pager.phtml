@@ -1,0 +1,111 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Pager template
+ *
+ * @see Mage_Page_Block_Html_Pager
+ */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+
+    <?php if($this->getUseContainer()): ?>
+    <div class="pager clearfix">
+        <hr>
+    <?php endif ?>
+
+    <?php if($this->getShowAmounts()): ?>
+    <p class="amount left">
+        <?php if($this->getLastPageNum()>1): ?>
+            <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+        <?php else: ?>
+            <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
+        <?php endif; ?>
+    </p>
+    <?php endif ?>
+
+    <?php if($this->getShowPerPage()): ?>
+
+    <div class="limiter right">
+        <a href="#" data-dropdown="drop" class="tiny button secondary dropdown"><?php echo $this->__('Show') ?></a><br>
+        <ul id="drop" data-dropdown-content class="f-dropdown" onchange="setLocation(this.value)">
+            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+            <li <?php if($this->isLimitCurrent($_key)): ?> class="active" <?php endif ?>>
+                <a href="<?php echo $this->getLimitUrl($_key) ?>"><?php echo $_limit ?> <?php echo $this->__('per page') ?></a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php endif ?>
+
+    <?php if($this->getLastPageNum()>1): ?>
+    <div class="pages">
+
+        <ul class="pagination">
+        <?php if (!$this->isFirstPage()): ?>
+            <li>
+                <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">
+                    <?php if(!$this->getAnchorTextForPrevious()): ?>
+                    «
+                    <?php else: ?>
+                        <?php echo $this->getAnchorTextForPrevious() ?>
+                    <?php endif;?>
+                </a>
+            </li>
+        <?php endif;?>
+
+        <?php if ($this->canShowFirst()): ?>
+            <li><a class="first" href="<?php echo $this->getFirstPageUrl() ?>">1</a></li>
+        <?php endif;?>
+
+        <?php if ($this->canShowPreviousJump()): ?>
+            <li><a class="previous_jump" title="" href="<?php echo $this->getPreviousJumpUrl() ?>">...</a></li>
+        <?php endif;?>
+
+        <?php foreach ($this->getFramePages() as $_page): ?>
+            <?php if ($this->isPageCurrent($_page)): ?>
+                <li class="current"><a href="#"><?php echo $_page ?></a></li>
+            <?php else: ?>
+                <li><a href="<?php echo $this->getPageUrl($_page) ?>"><?php echo $_page ?></a></li>
+            <?php endif;?>
+        <?php endforeach;?>
+
+
+        <?php if ($this->canShowNextJump()): ?>
+            <li><a class="next_jump" title="" href="<?php echo $this->getNextJumpUrl() ?>">...</a></li>
+        <?php endif;?>
+
+        <?php if ($this->canShowLast()): ?>
+          <li><a class="last" href="<?php echo $this->getLastPageUrl() ?>"><?php echo $this->getLastPageNum() ?></a></li>
+        <?php endif;?>
+
+        <?php if (!$this->isLastPage()): ?>
+            <li>
+                <a class="next<?php if(!$this->getAnchorTextForNext()): ?> i-next<?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
+                    <?php if(!$this->getAnchorTextForNext()): ?>
+                    »
+                    <?php else: ?>
+                        <?php echo $this->getAnchorTextForNext() ?>
+                    <?php endif;?>
+                </a>
+            </li>
+        <?php endif;?>
+        </ul>
+
+    </div>
+    <?php endif; ?>
+
+    <?php if($this->getUseContainer()): ?>
+    </div>
+    <?php endif ?>
+
+<?php endif ?>

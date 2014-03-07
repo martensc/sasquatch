@@ -1,0 +1,34 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Language switcher template
+ *
+ * @see Mage_Page_Block_Switch
+ */
+?>
+
+<?php if(count($this->getStores())>1): ?>
+    <div class="site-language switchers columns large-3 small-12 end">
+    <div class="form-language">
+        <form>
+            <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
+            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value" class="expand">
+                <?php foreach ($this->getStores() as $_lang): ?>
+                    <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
+                    <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </form>
+    </div>
+    </div>
+<?php endif; ?>

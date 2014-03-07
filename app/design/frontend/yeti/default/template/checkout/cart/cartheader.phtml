@@ -1,0 +1,74 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+/**
+ * Shoping cart sidebar
+ *
+ * @see Mage_Checkout_Block_Cart_Sidebar
+ */
+?>
+
+<div class="mtabs" id="mtab-1" data-dropdown-content>
+<?php $_cartQty = $this->getSummaryCount() ?>
+<?php if ($_cartQty > 0): ?>
+    <?php $_myCart = $this->__('My Cart (%s)', '<span>' . $_cartQty . '</span>') ?>
+<?php else: ?>
+    <?php $_myCart = $this->__('My Cart (%s)', '<span>0</span>') ?>
+<?php endif ?>
+<?php if ($this->getIsLinkMode() || !$this->getIsNeedToDisplaySideBar()):?>
+    <div class="block-title no-items">
+        <ul class="links cart-link">
+            <li ><a href="<?php echo $this->getUrl('checkout/cart'); ?>"><?php echo $_myCart ?></a></li>
+        </ul>
+    </div>
+<?php else:?>
+    <div id="topCartContent" class="block-content">
+        <?php $_items = $this->getRecentItems() ?>
+        <?php if(count($_items)): ?>
+            <h4 class="block-subtitle">
+                <?php echo $this->__('Recently added item(s)') ?>
+            </h4>
+            <ul id="mini-cart" class="mini-products-list no-bullet">
+            <?php foreach($_items as $_item): ?>
+                <?php echo $this->getItemHtml($_item) ?>
+            <?php endforeach; ?>
+            </ul>
+            <script type="text/javascript">decorateList('mini-cart', 'none-recursive')</script>
+        <?php else: ?>
+            <p class="cart-empty">
+                <?php echo $this->__('You have no items in your shopping cart.') ?>
+            </p>
+            <?php if ($this->getCartEmptyMessage()): ?>
+                <p class="cart-empty cart-empty-message"><?php echo $this->getCartEmptyMessage(); ?></p>
+            <?php endif; ?>
+        <?php endif ?>
+        <?php if ($_cartQty || $this->getAllowCartLink()): ?>
+            <?php $isPossibleOnepageCheckout = $_cartQty && $this->isPossibleOnepageCheckout() ?>
+            <?php if ($isPossibleOnepageCheckout): ?>
+                <p class="subtotal panel">
+                    <?php if ($this->canApplyMsrp()): ?>
+                        <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
+                    <?php else: ?>
+                        <span><?php echo $this->__('Cart Subtotal:') ?></span> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?><?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?> / <?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?><?php endif; ?>
+                    <?php endif; ?>
+                </p>
+            <?php endif ?>
+            <div class="actions">
+                <p class="go-to-cart"><a href="<?php echo $this->getUrl('checkout/cart'); ?>"><?php echo $this->__('Go to Shopping Cart') ?></a></p>
+                <?php if ($isPossibleOnepageCheckout): ?>
+                <?php echo $this->getChildHtml('extra_actions') ?>
+                <button class="button expand" type="button" onclick="setLocation('<?php echo $this->getCheckoutUrl() ?>')"><?php echo $this->__('Checkout') ?></button>
+                <?php endif ?>
+                </ul>
+            </div>
+        <?php endif ?>
+    </div>
+<?php endif;?>
+</div>

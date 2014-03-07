@@ -1,0 +1,33 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<div class="dashboard">
+    <div class="page-title">
+        <h1><?php echo $this->__('My Dashboard') ?></h1>
+    </div>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php echo $this->getChildHtml('hello') ?>
+    <?php echo $this->getChildHtml('top') ?>
+    <div class="box-account box-info row">
+        <div class="box-head large-12 columns">
+            <h2><?php echo $this->__('Account Information') ?></h2>
+        </div>
+        <?php /* Extensions placeholder */ ?>
+        <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
+        <?php echo $this->getChildHtml('info') ?>
+        <?php echo $this->getChildHtml('address') ?>
+        <div class="large-12 columns">
+            <hr>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('info1') ?>
+    <?php echo $this->getChildHtml('info2') ?>
+</div>

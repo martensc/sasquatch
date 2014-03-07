@@ -1,0 +1,24 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php $_menu = $this->getHtml('level-top', '') ?>
+<?php if($_menu): ?>
+
+        <?php echo $_menu ?>
+
+<?php endif ?>

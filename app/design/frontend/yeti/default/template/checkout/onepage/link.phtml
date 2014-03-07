@@ -1,0 +1,14 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php if ($this->isPossibleOnepageCheckout()):?>
+    <button type="button" title="<?php echo $this->__('Proceed to Secure Checkout') ?>" class="button expand btn-proceed-checkout btn-checkout<?php if ($this->isDisabled()):?> no-checkout<?php endif; ?>"<?php if ($this->isDisabled()):?> disabled="disabled"<?php endif; ?> onclick="window.location='<?php echo $this->getCheckoutUrl() ?>';"><?php echo $this->__('<i class="fa fa-lock"></i> Proceed to Secure Checkout') ?></button>
+<?php endif?>

@@ -1,0 +1,56 @@
+/////////////////////////////////////
+// Checkout
+/////////////////////////////////////
+
+ol#checkoutSteps {
+	list-style: none;
+	margin: 0;
+
+	li.section {
+		@include opacity(0.5);
+
+		.step-title {
+
+			.number {
+				background: #fff;
+				border-radius: 50%;
+				color: $gray-dark;
+				display: block;
+				float: left;
+				line-height: rem-calc(30);
+				padding: rem-calc(0 10);
+				margin: rem-calc(3 5 0 0);
+
+				@media #{$medium-up} {
+					line-height: rem-calc(38);
+					padding: rem-calc(0 14);
+					margin: rem-calc(5 15 0 0);
+				}
+			}
+		}
+
+		.step {
+			clear: both;
+
+			ul.checkout-address {
+				margin-left: 0;
+			}
+
+			.buttons-set {
+
+				// Hide continue button on click
+				button[disabled] {
+					display: none;
+				}
+
+				.button {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&.allow {
+			@include opacity(1);
+		}
+	}
+}

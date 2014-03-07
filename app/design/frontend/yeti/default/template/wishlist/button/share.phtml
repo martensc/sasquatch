@@ -1,0 +1,17 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+
+<?php if($this->getWishlist()->getItemsCount()): ?>
+	<li>
+    	<button type="submit" name="save_and_share" title="<?php echo $this->__('Share Wishlist') ?>" class="small button secondary btn-share"><i class="fa fa-heart"></i> <?php echo $this->__('Share Wishlist') ?></button>
+    </li>
+<?php endif;?>

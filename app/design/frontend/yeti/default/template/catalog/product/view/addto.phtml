@@ -1,0 +1,32 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+
+<?php $_product = $this->getProduct(); ?>
+<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+
+<ul class="add-to-links inline-list">
+    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+        <li>
+            <a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist">
+                <i class="fa fa-heart"></i> <?php echo $this->__('Add to Wishlist') ?>
+            </a>
+        </li>
+    <?php endif; ?>
+    <?php
+    $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);
+    ?>
+    <?php if($_compareUrl) : ?>
+        <li>
+            <a href="<?php echo $_compareUrl ?>" class="link-compare"><i class="fa fa-exchange"></i> <?php echo $this->__('Add to Compare') ?></a>
+        </li>
+    <?php endif; ?>
+</ul>

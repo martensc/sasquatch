@@ -1,0 +1,42 @@
+/////////////////////////////////////
+// My Cart Block
+/////////////////////////////////////
+
+#topCartContent {
+
+    .block-subtitle {
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .subtotal {
+        text-align: center;
+    }
+
+    .go-to-cart {
+        text-align: center;
+    }
+}
+
+ul.mini-products-list {
+
+    li.item {
+        @include clearfix;
+        border-bottom: 1px solid $gray-lighter;
+        padding-bottom: rem-calc(15);
+        margin-bottom: rem-calc(15);
+
+        &.last {
+            border-bottom: none;
+            padding-bottom: 0
+        }
+
+        a.product-image {
+            float: left;
+        }
+
+        .product-details {
+            margin-left: rem-calc(75);
+        }
+    }
+}

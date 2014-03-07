@@ -1,0 +1,58 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<header class="site-header">
+    <div class="site-header-content row">
+
+        <div class="mobile-links hide-for-medium-up clearfix">
+            <ul class="button-group right">
+                <li><a href="#mtab-1" class="small button secondary"><i class="fa fa-shopping-cart"></i></a></li>
+                <li><a href="#mtab-2" class="small button secondary"><i class="fa fa-user"></i></a></li>
+                <li><a href="#mtab-3" class="small button secondary"><i class="fa fa-search"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="site-links small-12 medium-8 medium-push-4 columns">
+            <?php echo $this->getChildHtml('topCart') ?>
+            <?php echo $this->getChildHtml('topLinks') ?>
+            <?php echo $this->getChildHtml('topSearch') ?>
+        </div>
+
+        <div class="site-identity small-12 medium-4 medium-pull-8 columns">
+            <?php if ($this->getIsHomePage()):?>
+                <h1 class="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getSkinUrl('assets/images/logo.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+            <?php else:?>
+                <h1 class="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getSkinUrl('assets/images/logo.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+            <?php endif?>
+        </div>
+    </div>
+</header>
+
+<div class="site-nav row">
+    <div class="columns large-12">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name"></li>
+                <li class="toggle-topbar menu-icon">
+                    <a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="left">
+                    <?php echo $this->getChildHtml('topMenu') ?>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>

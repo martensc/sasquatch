@@ -1,0 +1,18 @@
+/////////////////////////////////////
+// Compare
+/////////////////////////////////////
+
+table#product_comparison {
+
+    a.product-image {
+        float: left;
+    }
+
+    .product-details {
+        margin-left: rem-calc(145);
+
+        .price-box {
+            margin-bottom: rem-calc(20);
+        }
+    }
+}

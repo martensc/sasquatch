@@ -1,0 +1,34 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<form id="co-shipping-method-form" action="">
+    <div id="checkout-shipping-method-load">
+       <!-- Content loaded dynamically -->
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        var shippingMethod = new ShippingMethod('co-shipping-method-form', "<?php echo $this->getUrl('checkout/onepage/saveShippingMethod') ?>");
+    //]]>
+    </script>
+    <div id="onepage-checkout-shipping-method-additional-load">
+        <?php echo $this->getChildHtml('additional') ?>
+    </div>
+    <div class="buttons-set" id="shipping-method-buttons-container">
+        <hr>
+        <ul class="inline-list">
+            <li><a href="#" class="small button secondary" onclick="checkout.back(); return false;"><?php echo $this->__('<i class="fa fa-angle-left"></i> Back') ?></a></li>
+            <li class="right">
+                <button type="button" class="small button" onclick="shippingMethod.save()"><?php echo $this->__('Continue <i class="fa fa-angle-right"></i>') ?></button>
+                <a class="small button disabled please-wait" id="shipping-method-please-wait" style="display:none;"><?php echo $this->__('Loading next step <i class="fa fa-refresh fa-spin"></i>') ?></a>
+            </li>
+        </ul>
+    </div>
+</form>

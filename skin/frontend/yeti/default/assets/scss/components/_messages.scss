@@ -1,0 +1,44 @@
+/////////////////////////////////////
+// Global Messages
+/////////////////////////////////////
+
+ul.messages {
+	@extend .no-bullet;
+
+	> li {
+
+		border-style: solid;
+		border-width: 1px;
+		padding: 8px 16px;
+		@include border-radius(4px);
+		text-shadow: 0 1px 0 rgba(#fff, 0.5);
+
+		&.error-msg {
+			background-color: $msg-error;
+			border-color: darken($msg-error, 10%);
+			color: darken($msg-error, 50%);
+		}
+
+		&.success-msg {
+			background-color: $msg-succuss;
+			border-color: darken($msg-succuss, 10%);
+			color: darken($msg-succuss, 50%);
+		}
+
+		&.note-msg {
+			background-color: $msg-note;
+			border-color: darken($msg-note, 10%);
+			color: darken($msg-note, 50%);
+		}
+
+		&.notice-msg {
+			background-color: $msg-notice;
+			border-color: darken($msg-notice, 10%);
+			color: darken($msg-notice, 50%);
+		}
+
+		ul {
+			margin-left: 0;
+		}
+	}
+}

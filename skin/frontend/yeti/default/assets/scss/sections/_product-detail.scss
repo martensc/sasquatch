@@ -1,0 +1,43 @@
+/////////////////////////////////////
+// Product Detail
+/////////////////////////////////////
+
+.product-view {
+
+	// Description vertical rhythm
+	.short-description .std,
+	#product_tabs_description_contents .std {
+		@extend p;
+	}
+
+	// Product details
+	.product-shop {
+
+		.price-box {
+			margin: rem-calc(20) 0;
+
+			.price {
+				font-size: rem-calc(22);
+				font-weight: 300;
+			}
+		}
+
+		.product-options {
+
+			ul.options-list {
+				@extend .no-bullet;
+
+				span.label {
+					background: none;
+				}
+			}
+
+			span.qty-holder {
+
+				input.qty {
+					width: 15%;
+				}
+			}
+		}
+	}
+}

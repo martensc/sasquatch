@@ -1,0 +1,55 @@
+/////////////////////////////////////
+// Product List
+/////////////////////////////////////
+
+.category-products {
+
+	// Toolbar Styles
+	.amount {
+		color: $gray;
+		text-align: right;
+	}
+
+	.options {
+
+		.show {
+			margin-right: rem-calc(20);
+
+			#drop li.active a {
+				color: $primary-color;
+				font-weight: 700;
+			}
+		}
+
+		.button-group li a {
+			@media #{$small-only} {
+				padding-left: rem-calc(15);
+				padding-right: rem-calc(15);
+			}
+		}
+	}
+
+	// Grid View Styles
+	.grid-mode {
+
+		ul.grid-wrap {
+			@media #{$small-portrait} {
+				// Only display one product per row for small devices + portrait
+				@include block-grid(1);
+			}
+		}
+
+		h2.product-name {
+			font-size: rem-calc(18);
+		}
+
+		.actions {
+			margin-top: $paragraph-margin-bottom;
+
+			.button-group li .button {
+				padding-left: rem-calc(15);
+				padding-right: rem-calc(15);
+			}
+		}
+	}
+}

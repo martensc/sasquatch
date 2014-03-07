@@ -1,0 +1,47 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+/* @var $this Mage_Catalog_Block_Product_Compare_Sidebar */
+?>
+<?php 
+$_helper = $this->helper('catalog/product_compare');
+$_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
+?>
+<div class="block block-list block-compare">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Compare Products') ?>
+            <?php if($_helper->getItemCount() > 0): ?> 
+                <small><?php echo $this->__('(%d)', $_helper->getItemCount()) ?></small>
+            <?php endif; ?>
+        </span></strong>
+    </div>
+    <div class="block-content">
+    <?php if($_helper->getItemCount() > 0): ?>
+        <ol id="compare-items" class="side-nav">
+        <?php foreach($_items as $_index => $_item): ?>
+            <li class="item">
+                <input type="hidden" class="compare-item-id" value="<?php echo $_item->getId() ?>" />
+                <a href="<?php echo $_helper->getRemoveUrl($_item) ?>" title="<?php echo $this->__('Remove This Item') ?>" class="btn-remove left" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this item from the compare products?') ?>');"><?php echo $this->__('<i class="fa fa-times"></i>') ?></a>
+                <a class="product-name" href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName(), 'name') ?></a>
+            </li>
+        <?php endforeach; ?>
+        </ol>
+        <script type="text/javascript">decorateList('compare-items')</script>
+        <div class="actions">
+            <ul class="button-group">
+                <li><a class="tiny button secondary" href="<?php echo $_helper->getClearListUrl() ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove all products from your comparison?') ?>');"><?php echo $this->__('Clear All') ?></a></li>
+                <li><button type="button" title="<?php echo $this->__('Compare') ?>" class="tiny button" onclick="popWin('<?php echo $_helper->getListUrl() ?>','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')"><?php echo $this->__('Compare') ?></button></li>
+            </ul>
+        </div>
+    <?php else: ?>
+        <p class="empty"><?php echo $this->__('You have no items to compare.') ?></p>
+    <?php endif; ?>
+    </div>
+</div>

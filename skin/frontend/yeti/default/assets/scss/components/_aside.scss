@@ -1,0 +1,86 @@
+/////////////////////////////////////
+// Aside
+/////////////////////////////////////
+
+.sidebar {
+
+	.block {
+		margin-bottom: $panel-margin-bottom;
+
+		.block-title {
+			margin-bottom: $header-bottom-margin;
+
+			strong {
+				display: block;
+				font-size: $h4-font-size;
+				font-weight: 300;
+			}
+		}
+
+		.block-subtitle {
+			font-size: $h5-font-size;
+			font-weight: 300;
+			margin-bottom: $header-bottom-margin;
+		}
+
+		p.empty {
+			font-style: italic;
+		}
+
+		// Compare
+		&.block-compare {
+
+			a.product-name {
+				margin-left: rem-calc(20);
+			}
+		}
+
+		// My Cart
+		&.block-cart {
+
+			.summary {
+				background: rgba(#fff, 0.8);
+				text-align: center;
+				padding: rem-calc(10) rem-calc(5);
+				margin-bottom: $paragraph-margin-bottom;
+
+				p {
+					margin: rem-calc(5) 0;
+				}
+			}
+
+			.actions {
+				display: none;
+			}
+		}
+
+		// Wishlist
+		&.block-wishlist {
+			
+			ol#wishlist-sidebar {
+				list-style: none;
+				margin-left: 0;
+
+				li {
+					@include clearfix;
+					border-bottom: 1px solid $gray-light;
+					padding-bottom: rem-calc(15);
+					margin-bottom: rem-calc(15);
+
+					&.last {
+						border-bottom: none;
+            			padding-bottom: 0
+					}
+				
+					a.product-image {
+						float: left;
+					}
+
+					.product-details {
+						margin-left: rem-calc(60);
+					}
+				}
+			}
+		}
+	}
+}

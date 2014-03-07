@@ -1,0 +1,27 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php if ($this->getReviewsCount()): ?>
+    <div class="ratings">
+        <?php if ($this->getRatingSummary()):?>
+            <div class="rating-box">
+                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+            </div>
+        <?php endif;?>
+        <p class="rating-links">
+            <a href="<?php echo $this->getReviewsUrl() ?>"><i class="fa fa-thumbs-o-up"></i> <?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a>
+            <span class="separator">|</span>
+            <a href="<?php echo $this->getReviewsUrl() ?>#review-form"><?php echo $this->__('Add Your Review') ?></a>
+        </p>
+    </div>
+<?php elseif ($this->getDisplayIfEmpty()): ?>
+    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><i class="icon-bullhorn"></i> <?php echo $this->__('Be the first to review this product') ?></a></p>
+<?php endif; ?>

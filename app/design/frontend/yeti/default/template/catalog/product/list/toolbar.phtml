@@ -1,0 +1,102 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @see Mage_Catalog_Block_Product_List_Toolbar
+ */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+    <div class="pager columns small-12">
+        <div class="amount left">
+            <p>
+            <?php if($this->getLastPageNum()>1): ?>
+                <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+            <?php else: ?>
+                <?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?>
+            <?php endif; ?>
+            </p>
+        </div>
+        <div class="pages-wrapper right">
+            <?php echo $this->getPagerHtml() ?>
+        </div>
+        <hr/>
+    </div>
+
+    <?php if( $this->isExpanded() ): ?>
+    <div class="sorter columns small-12">
+
+        <?php if( $this->isEnabledViewSwitcher() ): ?>
+        <div class="view-mode show-for-medium-up left">
+            <?php $_modes = $this->getModes(); ?>
+            <?php if($_modes && count($_modes)>1): ?>
+            <ul class="inline-list left">
+            <?php foreach ($this->getModes() as $_code=>$_label): ?>
+                <?php if($this->isModeActive($_code)): ?>
+                    <li>
+                        <span data-tooltip data-options="disable_for_touch:true" title="View <?php echo $_label ?> Mode" class="<?php echo strtolower($_code); ?>">
+                            <?php if(strtolower($_code) == 'grid'): ?>
+                                <i class="fa fa-th-large"></i>
+                            <?php else: ?>
+                                <i class="fa fa-th-list"></i>
+                            <?php endif; ?>
+                        </span>
+                    </li>
+                <?php else: ?>
+                    <li>
+                        <span data-tooltip data-options="disable_for_touch:true" title="View <?php echo $_label ?> Mode" class="<?php echo strtolower($_code); ?>">
+                            <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>">
+                                <?php if(strtolower($_code) == 'grid'): ?>
+                                    <i class="fa fa-th-large"></i>
+                                <?php else: ?>
+                                    <i class="fa fa-th-list"></i>
+                                <?php endif; ?>
+                            </a>
+                        </span>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+
+        <div class="options right clearfix">
+            <div class="show left">
+                <a href="#" data-dropdown="drop" class="tiny button secondary dropdown">Show</a><br>
+                <ul id="drop" data-dropdown-content class="f-dropdown" onchange="setLocation(this.value)">
+                    <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                    <li <?php if($this->isLimitCurrent($_key)): ?> class="active" <?php endif ?>>
+                        <a href="<?php echo $this->getLimitUrl($_key) ?>"><?php echo $_limit ?> <?php echo $this->__('per page') ?></a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <ul class="button-group left">
+                <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                    <li><a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" class="tiny button <?php if($this->isOrderCurrent($_key)): ?>disabled<?php else: ?>secondary<?php endif; ?>"><?php echo $this->__($_order) ?></a></li>
+                <?php endforeach; ?>
+                    <li>
+                        <?php if($this->getCurrentDirection() == 'desc'): ?><a class="tiny button secondary" href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>">
+                        <i class="fa fa-arrow-down"></i></a>
+                    <?php else: ?>
+                        <a class="tiny button secondary" href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><i class="fa fa-arrow-up"></i></a>
+                    <?php endif; ?>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <?php endif; ?>
+<?php endif ?>

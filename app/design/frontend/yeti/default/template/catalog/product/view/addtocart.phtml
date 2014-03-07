@@ -1,0 +1,30 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php if($_product->isSaleable()): ?>
+	<div class="add-to-cart small-12 medium-6">
+		<div class="row">
+			<div class="small-2 columns">
+				<label class="inline" for="qty"><?php echo $this->__('Qty:') ?></label>
+			</div>
+
+			<div class="small-4 columns">
+				<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+			</div>
+
+			<div class="small-6 columns">
+				<button type="button" title="<?php echo $buttonTitle ?>" class="button postfix" onclick="productAddToCartForm.submit(this)"><?php echo $buttonTitle ?></button>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>

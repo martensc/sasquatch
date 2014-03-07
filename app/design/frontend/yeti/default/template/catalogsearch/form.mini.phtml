@@ -1,0 +1,32 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<div id="mtab-3" class="mtabs">
+    <form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+        <div class="row collapse form-search">
+            <div class="small-9 medium-10 columns">
+                <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="input-text" />
+            </div>
+            <div class="small-3 medium-2 columns">
+                <button type="submit" title="<?php echo $this->__('Search') ?>" class="button postfix">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div id="search_autocomplete" class="search-autocomplete"></div>
+            <script type="text/javascript">
+                //<![CDATA[
+                var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Seach entire store') ?>');
+                searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
+                //]]>
+            </script>
+        </div>
+    </form>
+</div>

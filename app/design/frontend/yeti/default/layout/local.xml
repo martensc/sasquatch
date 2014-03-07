@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+
+-->
+<layout version="0.1.0">
+
+<!--==============================================
+Default layout, loads most of the pages
+===============================================-->
+    <default>
+
+        <reference name="root">
+            <!-- Remove unused global blocks -->
+            <remove name="tags_popular" />
+            <remove name="left.permanent.callout" />
+            <remove name="right.permanent.callout" />
+            <remove name="right.poll" />
+            <remove name="paypal.partner.right.logo" />
+            <remove name="cart_sidebar" />
+            <!--
+            <remove name="left.newsletter" />
+            <remove name="catalog.compare.sidebar" />
+            <remove name="sale.reorder.sidebar" />
+            <remove name="right.reports.product.viewed" />
+            -->
+        </reference>
+
+        <reference name="head">
+            <!-- Remove unused default Magento CSS files -->
+            <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
+
+            <!-- Remove unused default Magento JS files -->
+            <action method="removeItem"><type>skin_js</type><name>js/ie6.js</name></action>
+            <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
+
+            <!-- Generated Foundation SCSS styles -->
+            <action method="addCss"><stylesheet>assets/stylesheets/app.css</stylesheet></action>
+
+            <!-- Add Top JS Files -->
+            <action method="addItem"><type>skin_js</type><name>components/modernizr/modernizr.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>assets/js/app.js</name></action>
+        </reference>
+
+        <reference name="header">
+            <block type="checkout/cart_sidebar" name="cart_top" as="topCart" template="checkout/cart/cartheader.phtml">
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <block type="core/text_list" name="topCart.extra_actions" as="extra_actions" translate="label" module="checkout">
+                    <label>My Cart Extra Actions</label>
+                </block>
+            </block>
+        </reference>
+
+        <reference name="top.links">
+            <!-- Remove the My Cart link -->
+            <action method="removeLinkByUrl">
+                <url helper="checkout/url/getCartUrl" />
+            </action>
+        </reference>
+
+        <reference name="before_body_end">
+            <!-- Add in IE8 JS files -->
+            <block type="page/html_head" name="foot_ie8" as="foot_ie8" before="foot" template="page/html/foot-ie8.phtml">
+                <action method="addItem"><type>skin_js</type><name>assets/js/foundation4/foundation.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>components/rem-unit-polyfill/js/rem.js</name></action>
+            </block>
+
+            <!-- Add in Foundation JS files -->
+            <block type="page/html_head" name="foot" as="foot" after="foot_ie8" template="page/html/foot.phtml">
+                <action method="addItem"><type>skin_js</type><name>components/foundation/js/foundation.min.js</name></action>
+            </block>
+        </reference>
+
+    </default>
+<!--==============================================
+END Default layout, loads most of the pages
+===============================================-->
+
+
+
+
+
+<!--==============================================
+Catalog.xml
+===============================================-->
+    <catalog_custom>
+        <reference name="root">
+            <!-- Change category page(s) layout to 2 columns left -->
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalog_custom>
+
+    <catalog_category_default translate="label">
+        <!-- Update category default with catalog custom -->
+        <update handle="catalog_custom" />
+    </catalog_category_default>
+
+    <catalog_category_layered translate="label">
+        <!-- Update category default with catalog custom -->
+        <update handle="catalog_custom" />
+    </catalog_category_layered>
+
+    <catalog_product_view translate="label">
+        <reference name="root">
+            <!-- Change product page layout to 1 column -->
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+        <reference name="content">
+            <reference name="product.info">
+
+                <!-- Unset Additional Data block -->
+                <action method="unsetChild"><name>product_additional_data</name></action>
+
+                <!-- Product page tabbed interface -->
+                <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs" template="catalog/product/view/tabs.phtml" >
+                    <!-- Product Description -->
+                    <action method="addTab" translate="title" module="catalog"><alias>description</alias><title>Product Description</title><block>catalog/product_view_description</block><template>catalog/product/view/description.phtml</template></action>
+                    <!-- Addtioanl Info -->
+                    <action method="addTab" translate="title" module="catalog"><alias>additional</alias><title>Additional Information</title><block>catalog/product_view_attributes</block><template>catalog/product/view/attributes.phtml</template></action>
+                    <!-- Upsell Products -->
+                    <action method="addTab" translate="title" module="catalog"><alias>upsell-products</alias><title>We Also Recommend</title><block>catalog/product_list_upsell</block><template>catalog/product/list/upsell.phtml</template></action>
+                    <!-- Related Products -->
+                    <action method="addTab" translate="title" module="tag"><alias>related-product</alias><title>Related Products</title><block>catalog/product_list_related</block><template>catalog/product/list/related.phtml</template></action>
+                    <!-- Product Tags -->
+                    <action method="addTab" translate="title" module="tag"><alias>product-tags</alias><title>Product Tags</title><block>tag/product_list</block><template>tag/list.phtml</template></action>
+                </block>
+            </reference>
+        </reference>
+    </catalog_product_view>
+<!--==============================================
+END Catalog.xml
+===============================================-->
+
+
+
+
+
+<!--==============================================
+Catalogsearch.xml
+===============================================-->
+    <catalogsearch_custom>
+        <reference name="root">
+            <!-- Change catalog search page(s) layout to 1 column -->
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalogsearch_custom>
+
+    <catalogsearch_result_index translate="label">
+        <!-- Update catalog search with catalogsearch custom -->
+        <update handle="catalogsearch_custom" />
+    </catalogsearch_result_index>
+
+    <catalogsearch_advanced_index translate="label">
+        <!-- Update catalog advanced search with catalogsearch custom -->
+        <update handle="catalogsearch_custom" />
+    </catalogsearch_advanced_index>
+<!--==============================================
+END Catalogsearch.xml
+===============================================-->
+
+
+
+
+
+<!--==============================================
+Reviews.xml
+===============================================-->
+    <review_product_list translate="label">
+        <!-- Change review page layout to 1 column -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </review_product_list>
+
+    <review_product_view translate="label">
+        <!-- Change review page layout to 1 column -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </review_product_view>
+<!--==============================================
+END Reviews.xml
+===============================================-->
+
+
+
+
+
+<!--==============================================
+Wishlist.xml
+===============================================-->
+    <wishlist_index_index translate="label">
+
+        <reference name="customer.wishlist.items">
+            <!-- Unset wishlist column remove -->
+            <action method="unsetChild"><name>customer.wishlist.item.remove</name></action>
+            <!-- Reset wishlist column with tr title -->
+            <block type="wishlist/customer_wishlist_item_column_remove" name="customer.wishlist.item.remove" template="wishlist/item/column/remove.phtml">
+                <action method="setTitle" translate="title">
+                    <title>Remove</title>
+                </action>
+            </block>
+        </reference>
+
+    </wishlist_index_index>
+<!--==============================================
+END Wishlist.xml
+===============================================-->
+
+</layout>

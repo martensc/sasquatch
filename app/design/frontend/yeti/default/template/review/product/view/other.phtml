@@ -1,0 +1,16 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+
+<?php $_product = Mage::registry('product'); ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo $_product->getProductUrl() ?>"><i class="fa fa-angle-left"></i> <?php echo $this->__('Back to Main Product Info') ?></a></p>
+</div>

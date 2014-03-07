@@ -1,0 +1,15 @@
+/////////////////////////////////////
+// Footer
+/////////////////////////////////////
+
+.site-footer {
+	margin-top: rem-calc(40);
+
+	.site-footer-content {
+		background: lighten($gray-lighter, 3%);
+		color: $gray;
+		font-weight: 300;
+		text-align: center;
+		padding: rem-calc(60) 0;
+	}
+}

@@ -1,0 +1,35 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Category layered navigation state
+ *
+ * @see Mage_Catalog_Block_Layer_State
+ */
+?>
+<?php $_filters = $this->getActiveFilters() ?>
+<?php if(!empty($_filters)): ?>
+<div class="currently">
+    <p class="block-subtitle"><?php echo $this->__('Currently Shopping by:') ?></p>
+    <ul class="no-bullet">
+    <?php foreach ($_filters as $_filter): ?>
+        <li>
+        	<div class="round-inline">
+            <a href="<?php echo $_filter->getRemoveUrl() ?>" title="<?php echo $this->__('Remove This Item') ?>" class="close"><?php echo $this->__('×') ?></a>
+            <span class="label"><?php echo $this->__($_filter->getName()) ?>:</span> <?php echo $this->stripTags($_filter->getLabel()) ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+</div>
+<?php endif; ?>

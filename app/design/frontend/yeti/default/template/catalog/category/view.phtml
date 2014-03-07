@@ -1,0 +1,66 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->htmlEscape($_category->getName()).'" title="'.$this->htmlEscape($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }
+?>
+
+<div class="page-title category-title columns large-12">
+    <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
+        <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
+    <?php endif; ?>
+    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+</div>
+
+<?php $message = $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php if(strlen($message>0)): ?>
+    <div class="category-message columns large-12">
+        <?php echo $message; ?>
+    </div>
+<?php endif; ?>
+
+<?php if($_imgUrl): ?>
+    <div class="category-image columns large-12">
+        <?php echo $_imgHtml ?>
+    </div>
+<?php endif; ?>
+
+<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description std columns large-12">
+        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    </div>
+<?php endif; ?>
+
+<div class="columns large-12">
+    <?php if($this->isContentMode()): ?>
+        <?php echo $this->getCmsBlockHtml() ?>
+
+    <?php elseif($this->isMixedMode()): ?>
+        <?php echo $this->getCmsBlockHtml() ?>
+        <?php echo $this->getProductListHtml() ?>
+
+    <?php else: ?>
+        <?php echo $this->getProductListHtml() ?>
+    <?php endif; ?>
+</div>

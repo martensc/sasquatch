@@ -1,0 +1,59 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+
+<?php $_items = $this->getReviewsCollection()->getItems();?>
+<div class="box-collateral box-reviews row" id="customer-reviews">
+    <div class="large-6 columns">
+        <?php echo $this->getChildHtml('review_form') ?>
+    </div>
+    <div class="large-6 columns">
+        <?php if (count($_items)):?>
+            <h2><?php echo $this->__('Customer Reviews') ?></h2>
+            <?php echo $this->getChildHtml('toolbar') ?>
+            <dl>
+                <?php foreach ($_items as $_review):?>
+                    <dt>
+                    <h5><?php echo $this->htmlEscape($_review->getTitle()) ?></h5>
+                    <span class="review-by"><?php echo $this->__('Review by <span>%s</span>', $this->htmlEscape($_review->getNickname())) ?></span>
+                    </dt>
+                    <dd>
+                        <p><?php echo nl2br($this->htmlEscape($_review->getDetail())) ?></p>
+                        <?php $_votes = $_review->getRatingVotes(); ?>
+                        <?php if (count($_votes)): ?>
+                            <table class="ratings-table">
+                                <col width="1" />
+                                <col />
+                                <tbody>
+                                <?php foreach ($_votes as $_vote): ?>
+                                    <tr>
+                                        <th><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></th>
+                                        <td>
+                                            <div class="rating-box">
+                                                <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php endif; ?>
+
+                        <small class="date"><?php echo $this->__('(Posted on %s)', $this->formatDate($_review->getCreatedAt()), 'long') ?></small>
+                    </dd>
+                <?php endforeach; ?>
+            </dl>
+            <?php echo $this->getChildHtml('toolbar') ?>
+        <?php endif;?>
+
+    </div>
+
+</div>

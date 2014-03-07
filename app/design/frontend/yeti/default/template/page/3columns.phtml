@@ -1,0 +1,60 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+    <?php echo $this->getChildHtml('global_notices') ?>
+        <?php echo $this->getChildHtml('header') ?>
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
+        <div class="main-container col3-layout">
+            <div class="row">
+                <div class="columns medium-12 large-9">
+                    <div class="row">
+                        <div class="col-main columns medium-8 medium-push-4">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php echo $this->getChildHtml('content') ?>
+                        </div>
+
+                        <div class="col-left sidebar columns medium-4 medium-pull-8">
+                            <div class="panel">
+                                <?php echo $this->getChildHtml('left') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar columns medium-12 large-3">
+                    <div class="panel">
+                        <?php echo $this->getChildHtml('right') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

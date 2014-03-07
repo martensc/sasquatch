@@ -1,0 +1,9 @@
+/////////////////////////////////////
+// Buttons
+/////////////////////////////////////
+
+// Fixes stupid Firefox padding issue
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}

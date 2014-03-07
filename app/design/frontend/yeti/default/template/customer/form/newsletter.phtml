@@ -1,0 +1,43 @@
+<?php
+/**
+ * Magento theme built on Zurb Foundation
+ *
+ * @category    design
+ * @package     yeti_default
+ * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      August Ash <code@augustash.com>
+ */
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('Newsletter Subscription') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php echo $this->getChildHtml('form_before')?>
+<form action="<?php echo $this->getAction() ?>" method="post" id="form-validate">
+    <div class="fieldset">
+        <?php echo $this->getBlockHtml('formkey')?>
+        <h3 class="legend"><?php echo $this->__('Newsletter Subscription') ?></h3>
+        <ul class="form-list no-bullet">
+            <li class="control"><input type="checkbox" name="is_subscribed" id="subscription" value="1" title="<?php echo $this->__('General Subscription') ?>"<?php if($this->getIsSubscribed()): ?> checked="checked"<?php endif; ?> class="checkbox" /><label for="subscription"><?php echo $this->__('General Subscription') ?></label></li>
+            <?php /* Extensions placeholder */ ?>
+            <?php echo $this->getChildHtml('customer.form.newsletter.extra')?>
+        </ul>
+    </div>
+
+    <div class="buttons-set">
+        <hr>
+        <ul class="inline-list">
+            <li><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link button secondary"><i class="fa fa-angle-left"></i> <?php echo $this->__('Back') ?></a></li>
+            <li class="right"><button type="submit" title="<?php echo $this->__('Save') ?>" class="button"><?php echo $this->__('Save') ?></button></li>
+        </ul>
+    </div>
+
+</form>
+<?php /* Extensions placeholder */ ?>
+<?php echo $this->getChildHtml('customer.form.newsletter.extra2')?>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>

@@ -1,0 +1,60 @@
+/////////////////////////////////////
+// Account
+/////////////////////////////////////
+
+.my-account {
+
+	.box-account {
+
+		.box-head {
+
+			> a {
+				text-transform: uppercase;
+				font-size: rem-calc(12);
+				margin-top: rem-calc(15);
+			}
+		}
+
+		.box {
+
+			.box-title {
+				border-bottom: 1px solid $gray-lighter;
+
+				> a {
+					text-transform: uppercase;
+					font-size: rem-calc(12);
+					margin-top: rem-calc(15);
+				}
+			}
+
+			.box-content > div {
+				margin-bottom: rem-calc(20);
+			}
+		}
+
+		ol#my_recent_reviews {
+			list-style: none;
+			margin-left: 0;
+
+			li {
+				@include clearfix;
+
+
+				.number {
+					background: $gray-lighter;
+					@include border-radius(50%);
+					display: block;
+					float: left;
+					width: rem-calc(40);
+					height: rem-calc(40);
+					line-height: rem-calc(40);
+					text-align: center;
+				}
+
+				.details {
+					margin-left: rem-calc(50);
+				}
+			}
+		}
+	}
+}

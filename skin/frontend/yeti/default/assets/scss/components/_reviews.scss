@@ -1,0 +1,48 @@
+/////////////////////////////////////
+// Reviews
+/////////////////////////////////////
+
+// Ratings
+.no-rating {
+	margin: 0;
+}
+
+.ratings {
+	font-size: rem-calc(15);
+	margin: rem-calc(5) 0;
+
+	strong {
+		float: left;
+		margin: rem-calc(1) rem-calc(3) 0 0;
+	}
+
+	.rating-links {
+		margin: 0;
+
+		.separator {
+			margin: 0 rem-calc(2);
+		}
+	}
+}
+
+.rating-box {
+	float: left;
+	width: rem-calc(69);
+	height: rem-calc(14);
+	font-size: 0;
+	line-height: 0;
+	@include background-image-retina(ico_ratings, png, 14px, 214px);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	text-indent: -9999em;
+	overflow: hidden;
+	margin: rem-calc(5) rem-calc(10) 0 0;
+
+	.rating {
+		float: left;
+		height: rem-calc(14);
+		@include background-image-retina(ico_ratings, png, 14px, 214px);
+		background-repeat: repeat-x;
+		background-position: 0 100%;
+	}
+}
