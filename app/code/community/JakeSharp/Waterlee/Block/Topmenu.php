@@ -46,6 +46,7 @@ class JakeSharp_Waterlee_Block_Topmenu extends Mage_Page_Block_Html_Topmenu {
                         $html .= '<div class="' . $childrenWrapClass . '">';
                     }
                     $html .= '<ul class="level' . $childLevel . ' dropdown' . '">';
+                    $html .= '<li class="level1 parent"><a href="' . $child->getUrl() . '" ' . $outermostClassCode . '><span>All '. $this->escapeHtml($child->getName()) . ' <i class="fa fa-angle-right"></i></span></a></li>';
                     $html .= $this->_getHtml($child, $childrenWrapClass);
                     $html .= '</ul>';
 
