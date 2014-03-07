@@ -106,6 +106,17 @@
 // Main nav
 .site-nav {
 	margin-bottom: rem-calc(20);
+
+	li.parent {
+	
+		> a {
+			text-transform: uppercase;
+		}
+
+		@media #{$medium-up} {
+			display: none;
+		}
+	}
 }
 
 // My Cart Block
