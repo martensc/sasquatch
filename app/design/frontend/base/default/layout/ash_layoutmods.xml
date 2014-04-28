@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Magento theme built on Zurb Foundation
+ * Ash Layout Modifications
  *
- * @category    design
- * @package     yeti_default
+ * @category    Ash
+ * @package     Ash_LayoutMods
  * @copyright   Copyright (c) 2014 August Ash (http://www.augustash.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author      August Ash <code@augustash.com>
  */
-
 -->
 <layout version="0.1.0">
 
