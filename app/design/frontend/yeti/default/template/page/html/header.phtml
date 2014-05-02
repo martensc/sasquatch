@@ -14,7 +14,6 @@
 ?>
 <header class="site-header">
     <div class="site-header-content row">
-
         <div class="mobile-links hide-for-medium-up clearfix">
             <ul class="button-group right">
                 <li><a href="#mtab-1" class="small button secondary"><i class="fa fa-shopping-cart"></i></a></li>
@@ -22,25 +21,23 @@
                 <li><a href="#mtab-3" class="small button secondary"><i class="fa fa-search"></i></a></li>
             </ul>
         </div>
-
         <div class="site-links small-12 medium-8 medium-push-4 columns">
             <?php echo $this->getChildHtml('topCart') ?>
             <?php echo $this->getChildHtml('topLinks') ?>
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
-
         <div class="site-identity small-12 medium-4 medium-pull-8 columns">
             <?php if ($this->getIsHomePage()):?>
                 <h1 class="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getSkinUrl('assets/images/logo.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
             <?php else:?>
-                <h1 class="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getSkinUrl('assets/images/logo.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+                <h2 class="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getSkinUrl('assets/images/logo.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
             <?php endif?>
         </div>
     </div>
 </header>
 
 <div class="site-nav row">
-    <div class="columns large-12">
+    <div class="large-12 columns">
         <nav class="top-bar" data-topbar>
             <ul class="title-area">
                 <li class="name"></li>
