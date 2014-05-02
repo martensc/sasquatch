@@ -14,26 +14,25 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
-
 <!doctype html>
 <html lang="<?php echo $this->getLang() ?>" class="no-js">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<!--[if IE 8 ]> <body<?php echo $this->getBodyClass()?' class="page-print '.$this->getBodyClass().' ie ie8"':'' ?>> <![endif]-->
-<!--[if IE 9 ]> <body<?php echo $this->getBodyClass()?' class="page-print '.$this->getBodyClass().' ie ie9"':'' ?>> <![endif]-->
-<!--[if gte IE 9]><!--> <body<?php echo $this->getBodyClass()?' class="page-print '.$this->getBodyClass().'"':'' ?>> <!--<![endif]-->
+<!--[if IE 8 ]> <body class="page-print ie ie8 <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>"> <![endif]-->
+<!--[if IE 9 ]> <body class="page-print ie ie9 <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>"> <![endif]-->
+<!--[if gte IE 9]><!--> <body class="page-print <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>"> <!--<![endif]-->
 <div>
     <div class="print-head">
         <img src="<?php echo $this->getPrintLogoUrl() ? $this->getPrintLogoUrl() : $this->getSkinUrl('images/logo_print.gif') ?>" class="logo" alt="" />
         <?php if ($this->getPrintLogoText()):?>
-            <address><?php echo nl2br($this->htmlEscape($this->getPrintLogoText())) ?></address>
+            <address><?php echo nl2br($this->escapeHtml($this->getPrintLogoText())) ?></address>
         <?php endif;?>
     </div>
     <?php echo $this->getChildHtml('content') ?>
     <div class="buttons-set">
-        <button type="button" title="<?php echo $this->__('Close Window') ?>" class="button" onclick="window.close();"><span><span><?php echo $this->__('Close Window') ?></span></span></button>
+        <button type="button" title="<?php echo $this->__('Close Window') ?>" class="button" onclick="window.close();"><?php echo $this->__('Close Window') ?></button>
     </div>
     <?php echo $this->getAbsoluteFooter() ?>
 </div>

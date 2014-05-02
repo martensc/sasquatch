@@ -23,27 +23,28 @@
 <!--[if IE 8 ]> <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().' ie ie8"':'' ?>> <![endif]-->
 <!--[if IE 9 ]> <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().' ie ie9"':'' ?>> <![endif]-->
 <!--[if gte IE 9]><!--> <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>> <!--<![endif]-->
-<?php echo $this->getChildHtml('after_body_start') ?>
+    <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
-        <?php echo $this->getChildHtml('header') ?>
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="main-container col2-left-layout row">
-                    <div class="small-12 columns">
-                        <div class="row">
-                            <section role="main" class="small-12 large-9 large-push-3 columns">
-                                <?php echo $this->getChildHtml('global_messages') ?>
-                                <?php echo $this->getChildHtml('content') ?>
-                            </section>
-                            <section role="complementary" class="col-left sidebar small-12 large-3 large-pull-9 columns">
-                                <div class="panel">
-                                    <?php echo $this->getChildHtml('left') ?>
-                                </div>
-                            </section>
-                        </div>
+    <?php echo $this->getChildHtml('header') ?>
+    <?php echo $this->getChildHtml('breadcrumbs') ?>
+    <div class="main-container col2-left-layout row">
+        <div class="small-12 columns">
+            <div class="row">
+                <section role="main" class="small-12 large-9 large-push-3 columns">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+                </section>
+                <section role="complementary" class="col-left sidebar small-12 large-3 large-pull-9 columns">
+                    <div class="panel">
+                        <?php echo $this->getChildHtml('left') ?>
                     </div>
-                </div>
-        <?php echo $this->getChildHtml('footer') ?>
+                </section>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('footer') ?>
+    <?php echo $this->getChildHtml('global_cookie_notice') ?>
     <?php echo $this->getChildHtml('before_body_end') ?>
-<?php echo $this->getAbsoluteFooter() ?>
+    <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>

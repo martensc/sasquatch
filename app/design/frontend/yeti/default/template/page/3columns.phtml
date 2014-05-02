@@ -14,7 +14,6 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
-
 <!doctype html>
 <html lang="<?php echo $this->getLang() ?>" class="no-js">
 <head>
@@ -24,35 +23,33 @@
 <!--[if IE 8 ]> <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().' ie ie8"':'' ?>> <![endif]-->
 <!--[if IE 9 ]> <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().' ie ie9"':'' ?>> <![endif]-->
 <!--[if gte IE 9]><!--> <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>> <!--<![endif]-->
-<?php echo $this->getChildHtml('after_body_start') ?>
+    <?php echo $this->getChildHtml('after_body_start') ?>
     <?php echo $this->getChildHtml('global_notices') ?>
-        <?php echo $this->getChildHtml('header') ?>
-        <?php echo $this->getChildHtml('breadcrumbs') ?>
-        <div class="main-container col3-layout">
+    <?php echo $this->getChildHtml('header') ?>
+    <?php echo $this->getChildHtml('breadcrumbs') ?>
+    <div class="main-container col3-layout row">
+        <div class="medium-12 large-9 columns">
             <div class="row">
-                <div class="columns medium-12 large-9">
-                    <div class="row">
-                        <div class="col-main columns medium-8 medium-push-4">
-                            <?php echo $this->getChildHtml('global_messages') ?>
-                            <?php echo $this->getChildHtml('content') ?>
-                        </div>
-
-                        <div class="col-left sidebar columns medium-4 medium-pull-8">
-                            <div class="panel">
-                                <?php echo $this->getChildHtml('left') ?>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-main medium-8 medium-push-4 columns">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
                 </div>
-                <div class="sidebar columns medium-12 large-3">
+                <div class="col-left sidebar medium-4 medium-pull-8 columns">
                     <div class="panel">
-                        <?php echo $this->getChildHtml('right') ?>
+                        <?php echo $this->getChildHtml('left') ?>
                     </div>
                 </div>
             </div>
         </div>
-        <?php echo $this->getChildHtml('footer') ?>
-        <?php echo $this->getChildHtml('before_body_end') ?>
-<?php echo $this->getAbsoluteFooter() ?>
+        <div class="sidebar medium-12 large-3 columns">
+            <div class="panel">
+                <?php echo $this->getChildHtml('right') ?>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('footer') ?>
+    <?php echo $this->getChildHtml('global_cookie_notice') ?>
+    <?php echo $this->getChildHtml('before_body_end') ?>
+    <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
