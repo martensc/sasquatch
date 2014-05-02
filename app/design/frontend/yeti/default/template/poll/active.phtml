@@ -11,7 +11,7 @@
 ?>
 <?php if(isset($poll)) : ?>
 <script type="text/javascript">
-    //<![CDATA[
+//<![CDATA[
     function validatePollAnswerIsSelected()
     {
         var options = $$('input.poll_vote');
@@ -22,7 +22,7 @@
         }
         return false;
     }
-    //]]>
+//]]>
 </script>
 <div class="block block-poll">
     <div class="block-title">
@@ -30,13 +30,13 @@
     </div>
     <form id="pollForm" action="<?php echo $action ?>" method="post" onsubmit="return validatePollAnswerIsSelected();">
         <div class="block-content">
-            <p class="block-subtitle"><?php echo $this->htmlEscape($poll->getPollTitle()); ?></p>
+            <p class="block-subtitle"><?php echo $this->escapeHtml($poll->getPollTitle()); ?></p>
             <?php if( $poll_answers ): ?>
             <ul id="poll-answers" class="no-bullet">
                 <?php foreach( $poll_answers as $answer ): ?>
                 <li>
                     <input type="radio" name="vote" class="radio poll_vote" id="vote_<?php echo $answer->getId() ?>" value="<?php echo $answer->getAnswerId() ?>" />
-                    <label for="vote_<?php echo $answer->getId() ?>"><?php echo $this->htmlEscape($answer->getAnswerTitle()) ?></label>
+                    <label for="vote_<?php echo $answer->getId() ?>"><?php echo $this->escapeHtml($answer->getAnswerTitle()) ?></label>
                 </li>
                 <?php endforeach; ?>
             </ul>
