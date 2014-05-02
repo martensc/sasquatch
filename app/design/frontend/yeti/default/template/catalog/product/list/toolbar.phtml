@@ -17,7 +17,7 @@
  */
 ?>
 <?php if($this->getCollection()->getSize()): ?>
-    <div class="pager columns small-12">
+    <div class="pager small-12 columns">
         <div class="amount left">
             <p>
             <?php if($this->getLastPageNum()>1): ?>
@@ -34,7 +34,7 @@
     </div>
 
     <?php if( $this->isExpanded() ): ?>
-    <div class="sorter columns small-12">
+    <div class="sorter small-12 columns">
 
         <?php if( $this->isEnabledViewSwitcher() ): ?>
         <div class="view-mode show-for-medium-up left">

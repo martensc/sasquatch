@@ -12,18 +12,20 @@
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php if($_product->isSaleable()): ?>
-	<div class="add-to-cart small-12 medium-6">
-		<div class="row">
-			<div class="small-2 columns">
-				<label class="inline" for="qty"><?php echo $this->__('Qty:') ?></label>
-			</div>
+	<div class="row">
+		<div class="add-to-cart small-12 medium-6 columns">
+			<div class="row">
+				<div class="small-2 columns">
+					<label class="inline" for="qty"><?php echo $this->__('Qty:') ?></label>
+				</div>
 
-			<div class="small-4 columns">
-				<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-			</div>
+				<div class="small-4 columns">
+					<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+				</div>
 
-			<div class="small-6 columns">
-				<button type="button" title="<?php echo $buttonTitle ?>" class="button postfix" onclick="productAddToCartForm.submit(this)"><?php echo $buttonTitle ?></button>
+				<div class="small-6 columns">
+					<button type="button" title="<?php echo $buttonTitle ?>" class="button postfix" onclick="productAddToCartForm.submit(this)"><?php echo $buttonTitle ?></button>
+				</div>
 			</div>
 		</div>
 	</div>
