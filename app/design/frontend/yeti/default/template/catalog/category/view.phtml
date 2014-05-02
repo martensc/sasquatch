@@ -21,7 +21,7 @@
     $_category  = $this->getCurrentCategory();
     $_imgHtml   = '';
     if ($_imgUrl = $_category->getImageUrl()) {
-        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->htmlEscape($_category->getName()).'" title="'.$this->htmlEscape($_category->getName()).'" /></p>';
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }
 ?>
@@ -33,7 +33,7 @@
     <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
 </div>
 
-<?php $message = $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <?php if(strlen($message>0)): ?>
     <div class="category-message columns large-12">
         <?php echo $message; ?>
