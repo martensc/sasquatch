@@ -11,15 +11,15 @@ downloader/*.cfg
 downloader/.cache/
 
 # Magento runtime media files
-media/catalog/product/cache/
-media/tmp/
-media/js/
-media/css/
-media/import/
-media/.thumbs/
-media/catalog
-media/wysiwyg
-media/*
+/media/catalog/product/cache/
+/media/tmp/
+/media/js/
+/media/css/
+/media/import/
+/media/.thumbs/
+/media/catalog
+/media/wysiwyg
+/media/*
 
 # Keep the directories!
 !media/.gitkeep
