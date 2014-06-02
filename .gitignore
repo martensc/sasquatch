@@ -21,8 +21,17 @@ media/catalog
 media/wysiwyg
 media/*
 
+# Keep the directories!
+!media/.gitkeep
+!media/**/.gitkeep
+!var/.gitkeep
+!var/*/.gitkeep
+!var/**/**/.gitkeep
+
 # Magento runtime directories and files
 var/*
+!var/.htaccess
+!var/package/
 
 # Development IDE settings
 nbproject/
