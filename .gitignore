@@ -1,0 +1,55 @@
+# Vagrant Boxes
+.vagrant
+
+# Modman (Magento modules installed via modman)
+.modman
+.modgit
+
+# Magento Connect 2 cache directories and files
+downloader/pearlib/cache/
+downloader/*.cfg
+downloader/.cache/
+
+# Magento runtime media files
+media/catalog/product/cache/
+media/tmp/
+media/js/
+media/css/
+media/import/
+media/.thumbs/
+media/catalog
+media/wysiwyg
+media/*
+
+# Magento runtime directories and files
+var/*
+
+# Development IDE settings
+nbproject/
+.buildpath
+.project
+.settings
+*.sublime-workspace
+*.sublime-project
+
+# Modgit (installs modules via github but complains about git submodules)
+.modgit
+
+# Cruft files
+events.txt
+REVISION
+
+# SASS
+.sass-cache
+skin/frontend/**/**/stylesheets/app.css
+
+# Sitemaps
+seo-sitemap/*
+!seo-sitemap/.gitkeep
+sitemap.xml
+!app/code/**/**/Sitemap
+
+# Debug Module
+app/code/local/Ash/Fire/
+app/etc/modules/Ash_Fire.xml
+
