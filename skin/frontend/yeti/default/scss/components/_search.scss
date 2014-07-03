@@ -1,0 +1,31 @@
+///////////////////////////
+// Search
+///////////////////////////
+
+#header-search {
+
+    .input-box {
+
+        > label {
+            display: none;
+        }
+
+        .input-text {
+            float: left;
+            width: 80%;
+        }
+
+        button.search-button {
+            @extend .postfix;
+            float: right;
+            width: 20%;
+        }
+    }
+
+    @media #{$medium-up} {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        width: 52%;
+    }
+}

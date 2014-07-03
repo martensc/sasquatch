@@ -1,0 +1,39 @@
+///////////////////////////
+// Language
+///////////////////////////
+
+.header-language-background {
+    background: $primary-color;
+    color: #fff;
+    padding: rem-calc(20 0);
+
+    .store-language-container {
+        float: left;
+        width: 30%;
+
+        select {
+            margin-bottom: 0;
+        }
+    }
+
+    p.welcome-msg {
+        float: right;
+        margin-bottom: 0;
+    }
+
+    @media #{$small-only} {
+        display: none;
+    }
+}
+
+.form-language > label {
+    display: none;
+}
+
+@media #{$small-only} {
+
+    .store-language-container {
+        float: right;
+        width: 30%;
+    }
+}

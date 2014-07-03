@@ -1,0 +1,29 @@
+///////////////////////////
+// Product List
+///////////////////////////
+
+.category-image {
+    margin-bottom: rem-calc(30);
+}
+
+ul.catblocks {
+    @include block-grid(2);
+
+    @media #{$medium-up} {
+        @include block-grid(4);
+    }
+
+    a {
+        @include thumb;
+
+        span {
+            display: block;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 1;
+            min-height: 40px;
+            padding: rem-calc(12 0);
+        }
+    }
+}

@@ -1,0 +1,45 @@
+///////////////////////////
+// Skip Links
+///////////////////////////
+
+@media #{$small-only} {
+
+    .skip-links {
+        clear: both;
+    }
+
+    a.skip-link {
+        display: block;
+        float: left;
+        width: 25%;
+        border-width: 1px 1px 1px 0;
+        border-style: solid;
+        border-color: #ddd;
+        text-align: center;
+        padding: rem-calc(10);
+
+        &.skip-nav {
+            border-left-width: 1px;
+        }
+
+        &.skip-active {
+            background: #eee;
+        }
+    }
+
+    .skip-content {
+        display: none;
+
+        &.skip-active {
+            display: block;
+        }
+    }
+
+}
+
+@media #{$medium-up} {
+    .skip-nav,
+    .skip-search {
+        display: none;
+    }
+}

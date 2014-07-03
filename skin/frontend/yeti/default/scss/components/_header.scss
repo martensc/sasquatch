@@ -1,0 +1,140 @@
+///////////////////////////
+// Header
+///////////////////////////
+
+#header {
+    position: relative;
+}
+
+// Logo
+a.logo {
+    margin-top: rem-calc(10);
+    float: left;
+
+    img {
+
+        &.large {
+            display: none;
+        }
+
+        @media #{$medium-up} {
+
+            &.large {
+                display: block;
+            }
+
+            &.small {
+                display: none;
+            }
+        }
+    }
+
+    @media #{$small-only} {
+        float: left;
+        width: 60%;
+        margin: rem-calc(10 0);
+    }
+}
+
+// Main Navigation
+#header-nav {
+    border-bottom: 1px solid #ddd;
+    clear: both;
+    padding: rem-calc(20 0 10);
+}
+
+#nav {
+
+    ol, ul {
+        list-style: none;
+        margin: 0;
+    }
+}
+
+.nav-primary {
+
+    .menu-active,
+    li.level0:hover {
+        z-index: 200;
+    }
+
+    li.level0 {
+        position: relative;
+
+        > a {
+            display: block;
+        }
+    }
+
+    @media #{$medium-up} {
+
+        li.level0 {
+            display: inline-block;
+            margin-right: rem-calc(35);
+
+            &.last {
+                margin-right: 0;
+            }
+
+            > a {
+                text-transform: uppercase;
+            }
+        }
+
+        // Default styles for 1+ drop-down menus
+        li.level0 ul {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            z-index: 10;
+            width: 250px;
+            padding: rem-calc(0 10);
+            display: none;
+        }
+
+        // Level 2+
+        li.level1 ul {
+            left: 60px;
+            top: 15px;
+        }
+
+        // Class for js to add briefly to evaluate element positioning.
+        li.level0 ul.level0.position-test {
+            display: block;
+        }
+
+        // Correct menus that will hang off the page (class added by js)
+        li.level0 ul.level0.spill {
+            right: 0;
+            left: auto;
+
+            // Sub-menu drop down to the left
+            li.level1 ul {
+                left: auto;
+                right: 50px;
+                top: 20px;
+            }
+        }
+
+        // Level 1+
+        li.level0 li.parent > a {
+            position: relative;
+
+            &:after {
+                right: 5px;
+                top: 50%;
+                margin-top: -3px;
+            }
+        }
+
+    } // END medium-up
+}
+
+@media #{$medium-up} {
+
+    .no-touch li:hover > ul {
+      display: block; // Force display
+    }
+}

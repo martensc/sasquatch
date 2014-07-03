@@ -362,29 +362,35 @@
  * SCAFFOLD FORM
  * ============================================ */
 /* Scaffolding can not be applied globally to all forms, since some forms are best displayed in a stacked layout */
+/* line 34, ../scss/scaffold-forms.scss */
 .scaffold-form .form-list > li {
   display: block;
 }
+/* line 37, ../scss/scaffold-forms.scss */
 .scaffold-form .form-list > li:after {
   content: '';
   display: table;
   clear: both;
 }
+/* line 42, ../scss/scaffold-forms.scss */
 .scaffold-form .fields {
   margin: 0;
   padding: 0;
 }
+/* line 45, ../scss/scaffold-forms.scss */
 .scaffold-form .fields:after {
   content: '';
   display: table;
   clear: both;
 }
+/* line 53, ../scss/scaffold-forms.scss */
 .scaffold-form .fields > .fields,
 .scaffold-form .field,
 .scaffold-form .wide,
 .scaffold-form .control {
   margin-bottom: 7px;
 }
+/* line 55, ../scss/scaffold-forms.scss */
 .scaffold-form .fields > .fields:after,
 .scaffold-form .field:after,
 .scaffold-form .wide:after,
@@ -393,11 +399,13 @@
   display: table;
   clear: both;
 }
+/* line 60, ../scss/scaffold-forms.scss */
 .scaffold-form label:first-child {
   float: left;
   width: 135px;
   padding: 7px 8px 0 0;
 }
+/* line 73, ../scss/scaffold-forms.scss */
 .scaffold-form select,
 .scaffold-form textarea,
 .scaffold-form input[type=email],
@@ -409,30 +417,36 @@
   width: 330px;
   max-width: 100%;
 }
+/* line 78, ../scss/scaffold-forms.scss */
 .scaffold-form .input-box {
   float: left;
   max-width: 350px;
 }
+/* line 83, ../scss/scaffold-forms.scss */
 .scaffold-form .buttons-set {
   padding-top: 5px;
 }
 
 @media only screen and (max-width: 599px) {
+  /* line 92, ../scss/scaffold-forms.scss */
   .scaffold-form label:first-child {
     float: none;
     width: auto;
     padding: 0;
   }
+  /* line 98, ../scss/scaffold-forms.scss */
   .scaffold-form .input-box {
     float: none;
     max-width: 100%;
   }
+  /* line 102, ../scss/scaffold-forms.scss */
   .scaffold-form .control .input-box {
     clear: none;
     float: left;
     display: inline;
     width: auto;
   }
+  /* line 108, ../scss/scaffold-forms.scss */
   .scaffold-form .control label:first-child {
     float: left;
   }

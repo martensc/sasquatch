@@ -1,0 +1,23 @@
+///////////////////////////
+// Grid
+///////////////////////////
+
+// Row Containers
+.header-language-container,
+.page-header,
+.main-container,
+.footer-container {
+    @include grid-row();
+}
+
+// Columns
+.page-header-container {
+    @include grid-column(12);
+}
+
+.col1-layout {
+
+    .main {
+        @include grid-column(12);
+    }
+}

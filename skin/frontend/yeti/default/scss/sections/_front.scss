@@ -1,0 +1,30 @@
+///////////////////////////
+// Front
+///////////////////////////
+
+.cms-home {
+
+    ul.promos {
+        @include block-grid(1);
+
+        @media #{$medium-up} {
+            @include block-grid(3);
+        }
+    }
+
+    ul.products-grid {
+        @include block-grid(2);
+
+        @media #{$medium-up} {
+            @include block-grid(4);
+        }
+
+        a.product-image {
+            @include thumb;
+        }
+
+        .actions {
+            display: none;
+        }
+    }
+}
