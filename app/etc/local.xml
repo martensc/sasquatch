@@ -28,10 +28,10 @@
 <config>
     <global>
         <install>
-            <date><![CDATA[Tue, 13 May 2014 22:48:33 +0000]]></date>
+            <date><![CDATA[Thu, 03 Jul 2014 12:52:34 +0000]]></date>
         </install>
         <crypt>
-            <key><![CDATA[aa47bd129b0232f978006bd1284217a0]]></key>
+            <key><![CDATA[f67ac165345d055c67740f9cb5f99bc3]]></key>
         </crypt>
         <disable_local_modules>false</disable_local_modules>
         <resources>
@@ -43,7 +43,7 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
                     <password><![CDATA[root]]></password>
-                    <dbname><![CDATA[new.magento]]></dbname>
+                    <dbname><![CDATA[sasquatch_19]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
@@ -58,7 +58,7 @@
         <routers>
             <adminhtml>
                 <args>
-                    <frontName><![CDATA[admin]]></frontName>
+                    <frontName><![CDATA[manage]]></frontName>
                 </args>
             </adminhtml>
         </routers>
