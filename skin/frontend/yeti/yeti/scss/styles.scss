@@ -38,6 +38,9 @@
 @import  "foundation/components/offcanvas";
 @import  "foundation/components/visibility";
 
+// Base
+@import "base/typography";
+
 // Components
 @import "components/header";
 @import "components/header-nav";
@@ -46,6 +49,7 @@
 @import "components/header-skip-links";
 @import "components/sidebar-block";
 @import "components/sidebar-filters";
+@import "components/price";
 @import "components/messages";
 @import "components/toolbar";
 @import "components/tables";

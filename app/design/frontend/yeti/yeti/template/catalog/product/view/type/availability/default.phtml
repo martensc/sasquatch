@@ -23,24 +23,17 @@
  * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-/**
- * Shoping cart sidebar
- *
- * @see Mage_Checkout_Block_Cart_Sidebar
- */
-
-?>
-
-<?php
-    $_cartQty = $this->getSummaryCount();
-    if(empty($_cartQty)) {
-        $_cartQty = 0;
-    }
-?>
-
-<a href="#header-cart" class="skip-link skip-cart <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
-    <span class="icon"><i class="fa fa-shopping-cart"></i></span>
-    <span class="menu-label"><?php echo $this->__('Cart'); ?></span>
-    <span class="count"><?php echo $_cartQty; ?></span>
-</a>
+$_product = $this->getProduct(); ?>
+<?php if ($this->displayProductStockStatus()): ?>
+    <?php if ($_product->isAvailable()): ?>
+        <p class="availability in-stock">
+            <span class="stock-label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
+            <span class="value"><?php echo $this->helper('catalog')->__('In stock') ?></span>
+        </p>
+    <?php else: ?>
+        <p class="availability out-of-stock">
+            <span class="stock-label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
+            <span class="value"><?php echo $this->helper('catalog')->__('Out of stock') ?></span>
+        </p>
+    <?php endif; ?>
+<?php endif; ?>

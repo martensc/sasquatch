@@ -1,0 +1,21 @@
+/////////////////////////////
+// Price
+/////////////////////////////
+
+.price-info {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+.price-box {
+
+    > p {
+        margin-bottom: ($paragraph-margin-bottom / 2);
+    }
+
+    .old-price {
+
+        .price {
+            text-decoration: line-through;
+        }
+    }
+}

@@ -8571,32 +8571,42 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+/* line 5, ../scss/base/_typography.scss */
+.validation-advice {
+  color: #f04124;
+  font-style: italic;
+  margin-top: -1rem;
+}
+
 /* line 5, ../scss/components/_header.scss */
 .page-header-container {
   position: relative;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* line 9, ../scss/components/_header.scss */
+/* line 12, ../scss/components/_header.scss */
 a.logo {
   display: block;
   text-align: center;
   margin: 1rem 0;
 }
-/* line 14, ../scss/components/_header.scss */
+/* line 17, ../scss/components/_header.scss */
 a.logo img.large {
   display: none;
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 9, ../scss/components/_header.scss */
+  /* line 12, ../scss/components/_header.scss */
   a.logo {
     margin-top: 2.5rem;
     float: left;
   }
-  /* line 24, ../scss/components/_header.scss */
+  /* line 27, ../scss/components/_header.scss */
   a.logo img.large {
     display: block;
   }
-  /* line 28, ../scss/components/_header.scss */
+  /* line 31, ../scss/components/_header.scss */
   a.logo img.small {
     display: none;
   }
@@ -8607,43 +8617,46 @@ a.logo img.large {
   clear: both;
 }
 
-/* line 13, ../scss/components/_header-nav.scss */
-nav#nav ol,
-nav#nav ul {
+/* line 12, ../scss/components/_header-nav.scss */
+nav#nav ol, nav#nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 19, ../scss/components/_header-nav.scss */
+/* line 18, ../scss/components/_header-nav.scss */
 nav#nav li {
   position: relative;
 }
-/* line 23, ../scss/components/_header-nav.scss */
+/* line 22, ../scss/components/_header-nav.scss */
 nav#nav a {
   display: block;
-  padding: 0.25rem 0;
 }
-/* line 29, ../scss/components/_header-nav.scss */
+/* line 27, ../scss/components/_header-nav.scss */
 nav#nav ul.level0 {
-  transition: opacity 100ms ease-out;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 38, ../scss/components/_header-nav.scss */
+  /* line 35, ../scss/components/_header-nav.scss */
+  nav#nav ul.level0 {
+    transition: opacity 100ms ease-out;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* line 42, ../scss/components/_header-nav.scss */
   nav#nav a {
     padding: 0.25rem 1rem;
   }
-  /* line 42, ../scss/components/_header-nav.scss */
+  /* line 46, ../scss/components/_header-nav.scss */
   nav#nav li.level0 {
     display: inline-block;
   }
-  /* line 45, ../scss/components/_header-nav.scss */
+  /* line 49, ../scss/components/_header-nav.scss */
   nav#nav li.level0:hover ul.level0 {
     opacity: 1;
     visibility: visible;
   }
-  /* line 51, ../scss/components/_header-nav.scss */
+  /* line 55, ../scss/components/_header-nav.scss */
   nav#nav ul.level0 {
     position: absolute;
     top: 100%;
@@ -8770,17 +8783,23 @@ nav#nav ul.level0 {
     margin-left: 1rem;
   }
 }
+@media only screen and (max-width: 40em) {
+  /* line 58, ../scss/components/_header-skip-links.scss */
+  .skip-links .menu-label {
+    display: none;
+  }
+}
 
-/* line 57, ../scss/components/_header-skip-links.scss */
+/* line 64, ../scss/components/_header-skip-links.scss */
 .skip-content {
   display: none;
   padding: 1rem;
 }
-/* line 61, ../scss/components/_header-skip-links.scss */
+/* line 68, ../scss/components/_header-skip-links.scss */
 .skip-content.skip-active {
   display: block;
 }
-/* line 66, ../scss/components/_header-skip-links.scss */
+/* line 73, ../scss/components/_header-skip-links.scss */
 .skip-content ul,
 .skip-content ol {
   list-style: none;
@@ -8788,7 +8807,7 @@ nav#nav ul.level0 {
   margin: 0;
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 75, ../scss/components/_header-skip-links.scss */
+  /* line 82, ../scss/components/_header-skip-links.scss */
   .skip-content#header-nav, .skip-content#header-search {
     padding: 0;
     display: block;
@@ -8810,7 +8829,21 @@ dl#narrow-by-list dt {
   padding-top: 0;
 }
 
-/* line 5, ../scss/components/_messages.scss */
+/* line 5, ../scss/components/_price.scss */
+.price-info {
+  margin-bottom: 1.25rem;
+}
+
+/* line 11, ../scss/components/_price.scss */
+.price-box > p {
+  margin-bottom: 0.625rem;
+}
+/* line 17, ../scss/components/_price.scss */
+.price-box .old-price .price {
+  text-decoration: line-through;
+}
+
+/* line 6, ../scss/components/_messages.scss */
 .global-site-notice {
   background: #f08a24;
   border-bottom: 1px solid #d3700e;
@@ -8818,9 +8851,51 @@ dl#narrow-by-list dt {
   color: #fff;
   padding: 1rem;
 }
-/* line 12, ../scss/components/_messages.scss */
+/* line 13, ../scss/components/_messages.scss */
 .global-site-notice p {
   margin-bottom: 0;
+}
+
+/* line 19, ../scss/components/_messages.scss */
+ul.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+/* line 24, ../scss/components/_messages.scss */
+ul.messages ul {
+  list-style: none;
+  margin: 0;
+}
+/* line 29, ../scss/components/_messages.scss */
+ul.messages > li {
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5rem 1rem;
+}
+/* line 35, ../scss/components/_messages.scss */
+ul.messages > li.error-msg {
+  background-color: #f04124;
+  border-color: #d32a0e;
+  color: #fff;
+}
+/* line 41, ../scss/components/_messages.scss */
+ul.messages > li.success-msg {
+  background-color: #43ac6a;
+  border-color: #358753;
+  color: #fff;
+}
+/* line 47, ../scss/components/_messages.scss */
+ul.messages > li.note-msg {
+  background-color: #a0d3e8;
+  border-color: #77c0de;
+  color: #1b566e;
+}
+/* line 53, ../scss/components/_messages.scss */
+ul.messages > li.notice-msg {
+  background-color: #f08a24;
+  border-color: #d3700e;
+  color: #fff;
 }
 
 /* line 6, ../scss/components/_toolbar.scss */

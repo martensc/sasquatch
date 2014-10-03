@@ -52,6 +52,13 @@
         }
 
     } // END $medium-up
+
+    @media #{$small-only} {
+
+        .menu-label {
+            display: none;
+        }
+    }
 }
 
 .skip-content {
