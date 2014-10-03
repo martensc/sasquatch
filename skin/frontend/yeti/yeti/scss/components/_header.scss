@@ -1,0 +1,33 @@
+/////////////////////////////
+// Header
+/////////////////////////////
+
+.page-header-container {
+    position: relative;
+}
+
+a.logo {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+
+    img.large {
+        display: none;
+    }
+
+    // a.logo
+    @media #{$large-up} {
+
+        margin-top: 2.5rem;
+        float: left;
+
+        img.large {
+            display: block;
+        }
+
+        img.small {
+            display: none;
+        }
+
+    } // END $medium-up
+}

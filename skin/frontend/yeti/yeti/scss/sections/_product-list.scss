@@ -1,0 +1,19 @@
+/////////////////////////////
+// Product List
+/////////////////////////////
+
+.products-grid {
+    text-align: center;
+    
+    h2.product-name {
+        font-size: rem-calc(20);
+    }
+
+    ul.add-to-links {
+        font-size: rem-calc(13);
+
+        li {
+            display: inline-block;
+        }
+    }
+}

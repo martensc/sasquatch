@@ -50,7 +50,7 @@ REVISION
 
 # SASS
 .sass-cache
-skin/frontend/**/**/stylesheets/app.css
+skin/frontend/**/**/css/app.css
 
 # Sitemaps
 seo-sitemap/*
@@ -61,4 +61,3 @@ sitemap.xml
 # Debug Module
 app/code/local/Ash/Fire/
 app/etc/modules/Ash_Fire.xml
-

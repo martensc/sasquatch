@@ -1,0 +1,62 @@
+/////////////////////////////
+// Header Nav
+/////////////////////////////
+
+#header-nav {
+    clear: both;
+}
+
+nav#nav {
+
+    // Global styles
+    ol,
+    ul, {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        position: relative;
+    }
+
+    a {
+        display: block;
+        padding: 0.25rem 0;
+    }
+
+    // Second level
+    ul.level0 {
+        @include single-transition($property: opacity, $speed: 100ms);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    // nav#nav
+    @media #{$large-up} {
+
+        a {
+            padding: 0.25rem 1rem;
+        }
+        
+        li.level0 {
+            display: inline-block;
+
+            &:hover ul.level0 {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    
+        ul.level0 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 15rem;
+            background: $white-smoke;
+            border: 1px solid $gainsboro;
+            z-index: 1;
+        }
+
+    } // END $medium-up
+}

@@ -1,0 +1,36 @@
+/////////////////////////////
+// Header Language
+/////////////////////////////
+
+.header-language-container {
+    @include clearfix;
+    display: none;
+    background: $primary-color;
+    color: #fff;
+    padding: 0.5rem 1rem;
+
+    @media #{$large-up} {
+        display: block;
+    } // END $large-up
+
+    .store-language-container {
+        float: left;
+
+        label {
+            display: inline-block;
+            color: #fff;
+        }
+
+        select {
+            display: inline-block;
+            width: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    p.welcome-msg {
+        float: right;
+        line-height: 2.3rem;
+        margin-bottom: 0;
+    }
+}

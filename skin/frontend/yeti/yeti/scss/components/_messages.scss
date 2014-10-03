@@ -1,0 +1,15 @@
+/////////////////////////////
+// Messages
+/////////////////////////////
+
+.global-site-notice {
+    background: $warning-color;
+    border-bottom: 1px solid darken($warning-color, 10);
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+
+    p {
+        margin-bottom: 0;
+    }
+}
