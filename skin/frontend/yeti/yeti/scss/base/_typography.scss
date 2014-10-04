@@ -7,3 +7,13 @@
     font-style: italic;
     margin-top: -$form-spacing;
 }
+
+p.required {
+  font-size: 0.8rem;
+  color: $alert-color;
+}
+
+label.required em {
+  color: $alert-color;
+  margin-right: 0.2rem;
+}

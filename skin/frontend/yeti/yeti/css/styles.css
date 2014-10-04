@@ -8578,12 +8578,24 @@ th.hide-for-touch {
   margin-top: -1rem;
 }
 
+/* line 11, ../scss/base/_typography.scss */
+p.required {
+  font-size: 0.8rem;
+  color: #f04124;
+}
+
+/* line 16, ../scss/base/_typography.scss */
+label.required em {
+  color: #f04124;
+  margin-right: 0.2rem;
+}
+
 /* line 5, ../scss/components/_header.scss */
 .page-header-container {
   position: relative;
   border-bottom: 1px solid #dddddd;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* line 12, ../scss/components/_header.scss */
@@ -8627,36 +8639,65 @@ nav#nav ol, nav#nav ul {
 nav#nav li {
   position: relative;
 }
-/* line 22, ../scss/components/_header-nav.scss */
+@media only screen and (max-width: 40em) {
+  /* line 25, ../scss/components/_header-nav.scss */
+  nav#nav li.level0.parent > a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: #dddddd transparent transparent transparent;
+    border-top-style: solid;
+    float: right;
+    margin-top: 0.5rem;
+  }
+  /* line 31, ../scss/components/_header-nav.scss */
+  nav#nav li.level0.parent.menu-active > a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: transparent transparent #dddddd transparent;
+    border-bottom-style: solid;
+    margin-top: 0;
+  }
+}
+/* line 39, ../scss/components/_header-nav.scss */
+nav#nav li.level0.menu-active > ul {
+  display: block;
+}
+/* line 44, ../scss/components/_header-nav.scss */
 nav#nav a {
   display: block;
 }
-/* line 27, ../scss/components/_header-nav.scss */
+/* line 49, ../scss/components/_header-nav.scss */
 nav#nav ul.level0 {
   display: none;
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 35, ../scss/components/_header-nav.scss */
+  /* line 57, ../scss/components/_header-nav.scss */
   nav#nav ul.level0 {
     transition: opacity 100ms ease-out;
     display: block;
     opacity: 0;
     visibility: hidden;
   }
-  /* line 42, ../scss/components/_header-nav.scss */
+  /* line 64, ../scss/components/_header-nav.scss */
   nav#nav a {
     padding: 0.25rem 1rem;
   }
-  /* line 46, ../scss/components/_header-nav.scss */
+  /* line 68, ../scss/components/_header-nav.scss */
   nav#nav li.level0 {
     display: inline-block;
   }
-  /* line 49, ../scss/components/_header-nav.scss */
+  /* line 71, ../scss/components/_header-nav.scss */
   nav#nav li.level0:hover ul.level0 {
     opacity: 1;
     visibility: visible;
   }
-  /* line 55, ../scss/components/_header-nav.scss */
+  /* line 77, ../scss/components/_header-nav.scss */
   nav#nav ul.level0 {
     position: absolute;
     top: 100%;
@@ -8686,8 +8727,7 @@ nav#nav ul.level0 {
 /* line 5, ../scss/components/_header-language.scss */
 .header-language-container {
   display: none;
-  background: #008cba;
-  color: #fff;
+  background: whitesmoke;
   padding: 0.5rem 1rem;
 }
 /* line 172, ../bower_components/foundation/scss/foundation/components/_global.scss */
@@ -8705,14 +8745,13 @@ nav#nav ul.level0 {
     display: block;
   }
 }
-/* line 16, ../scss/components/_header-language.scss */
+/* line 17, ../scss/components/_header-language.scss */
 .header-language-container .store-language-container {
   float: left;
 }
-/* line 19, ../scss/components/_header-language.scss */
+/* line 20, ../scss/components/_header-language.scss */
 .header-language-container .store-language-container label {
   display: inline-block;
-  color: #fff;
 }
 /* line 24, ../scss/components/_header-language.scss */
 .header-language-container .store-language-container select {
@@ -8849,7 +8888,7 @@ dl#narrow-by-list dt {
   border-bottom: 1px solid #d3700e;
   text-align: center;
   color: #fff;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 /* line 13, ../scss/components/_messages.scss */
 .global-site-notice p {
@@ -8976,6 +9015,112 @@ table {
   width: 100%;
 }
 
+/* line 8, ../scss/components/_forms.scss */
+.control .input-box,
+.control label {
+  display: inline-block;
+}
+
+/* line 13, ../scss/components/_forms.scss */
+input.input-text {
+  width: 45%;
+}
+
+/* line 6, ../scss/components/_tabs.scss */
+ul.toggle-tabs {
+  display: none;
+}
+@media only screen and (min-width: 40.063em) {
+  /* line 6, ../scss/components/_tabs.scss */
+  ul.toggle-tabs {
+    display: block;
+    border-bottom: 1px solid #dddddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  /* line 17, ../scss/components/_tabs.scss */
+  ul.toggle-tabs li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+  }
+  /* line 22, ../scss/components/_tabs.scss */
+  ul.toggle-tabs li:hover {
+    background: #eeeeee;
+  }
+  /* line 26, ../scss/components/_tabs.scss */
+  ul.toggle-tabs li.current {
+    background: #008cba;
+    color: #fff;
+  }
+}
+
+/* line 37, ../scss/components/_tabs.scss */
+.toggle-content {
+  margin-bottom: 2rem;
+}
+/* line 172, ../bower_components/foundation/scss/foundation/components/_global.scss */
+.toggle-content:before, .toggle-content:after {
+  content: " ";
+  display: table;
+}
+/* line 173, ../bower_components/foundation/scss/foundation/components/_global.scss */
+.toggle-content:after {
+  clear: both;
+}
+/* line 41, ../scss/components/_tabs.scss */
+.toggle-content .tab {
+  background: whitesmoke;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+}
+/* line 49, ../scss/components/_tabs.scss */
+.toggle-content .tab:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 6px;
+  border-color: transparent transparent transparent #008cba;
+  border-left-style: solid;
+  float: left;
+  margin: 0.5rem 0.5rem 0 0;
+}
+@media only screen and (min-width: 40.063em) {
+  /* line 41, ../scss/components/_tabs.scss */
+  .toggle-content .tab {
+    display: none;
+  }
+}
+/* line 64, ../scss/components/_tabs.scss */
+.toggle-content .tab-container {
+  display: none;
+  padding-top: 1rem;
+}
+@media only screen and (min-width: 40.063em) {
+  /* line 70, ../scss/components/_tabs.scss */
+  .toggle-content .tab-container.current {
+    display: block;
+  }
+}
+/* line 79, ../scss/components/_tabs.scss */
+.toggle-content.accordion-open .tab.current:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 6px;
+  border-color: #008cba transparent transparent transparent;
+  border-top-style: solid;
+}
+/* line 83, ../scss/components/_tabs.scss */
+.toggle-content.accordion-open .tab-container.current {
+  display: block;
+}
+
 /* line 5, ../scss/sections/_product-list.scss */
 .products-grid {
   text-align: center;
@@ -9063,54 +9208,4 @@ ul.product-image-thumbs a:hover {
 ul.add-to-links li,
 ul.sharing-links li {
   display: inline-block;
-}
-
-/* line 84, ../scss/sections/_product-view.scss */
-.toggle-content {
-  margin-bottom: 2rem;
-}
-/* line 172, ../bower_components/foundation/scss/foundation/components/_global.scss */
-.toggle-content:before, .toggle-content:after {
-  content: " ";
-  display: table;
-}
-/* line 173, ../bower_components/foundation/scss/foundation/components/_global.scss */
-.toggle-content:after {
-  clear: both;
-}
-
-/* line 89, ../scss/sections/_product-view.scss */
-ul.toggle-tabs {
-  border-bottom: 1px solid #dddddd;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-/* line 95, ../scss/sections/_product-view.scss */
-ul.toggle-tabs li {
-  display: inline-block;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-}
-/* line 100, ../scss/sections/_product-view.scss */
-ul.toggle-tabs li:hover {
-  background: #eeeeee;
-}
-/* line 104, ../scss/sections/_product-view.scss */
-ul.toggle-tabs li.current {
-  background: #008cba;
-  color: #fff;
-}
-
-/* line 113, ../scss/sections/_product-view.scss */
-.collateral-tabs .tab {
-  display: none;
-}
-/* line 117, ../scss/sections/_product-view.scss */
-.collateral-tabs .tab-container {
-  display: none;
-}
-/* line 120, ../scss/sections/_product-view.scss */
-.collateral-tabs .tab-container.current {
-  display: block;
 }

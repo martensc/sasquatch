@@ -1,0 +1,87 @@
+/////////////////////////////
+// Tabs
+/////////////////////////////
+
+// Tab ul styles
+ul.toggle-tabs {
+    display: none;
+
+    @media #{$medium-up} {
+
+        display: block;
+        border-bottom: 1px solid $gainsboro;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline-block;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+                background: $smoke;
+            }
+
+            &.current {
+                background: $primary-color;
+                color: #fff;
+            }
+        }
+
+    } // END $medium-up
+
+}
+
+// Tab styles
+.toggle-content {
+    @include clearfix;
+    margin-bottom: 2rem;
+
+    .tab {
+        background: $white-smoke;
+        border-bottom: 1px solid $gainsboro;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        margin-bottom: 0;
+
+        // Display arrow for accordions
+        &:before {
+            @include css-triangle($f-dropdown-triangle-size, $primary-color, left);
+            float: left;
+            margin: 0.5rem 0.5rem 0 0;
+        }
+
+        // Hide accordion tabs
+        @media #{$medium-up} {
+
+            display: none;
+
+        } // END $medium-up
+    }
+
+    // Tab content display
+    .tab-container {
+        display: none;
+        padding-top: 1rem;
+
+        @media #{$medium-up} {
+
+            &.current {
+                display: block;
+            }
+        }
+    }
+
+    // Display tab content with class
+    &.accordion-open {
+
+        .tab.current:before {
+            @include css-triangle($f-dropdown-triangle-size, $primary-color, top);
+        }
+
+        .tab-container.current {
+            display: block;
+        }
+    }
+}

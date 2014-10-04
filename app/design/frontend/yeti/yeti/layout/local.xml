@@ -24,6 +24,12 @@
             </block>
 
         </reference>
+
+        <reference name="footer">
+            <!-- Unset default csm footer blocks  -->
+            <action method="unsetChild"><alias>cms_footer_links</alias></action>
+            <action method="unsetChild"><alias>cms_footer_links_sm</alias></action>
+        </reference>
     </default>
 
 </layout>

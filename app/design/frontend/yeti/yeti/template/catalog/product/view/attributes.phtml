@@ -19,37 +19,34 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-?>
-<?php
+
 /**
- * Template for filter items block
+ * Product additional attributes template
  *
- * @see Mage_Catalog_Block_Layer_Filter
+ * @see Mage_Catalog_Block_Product_View_Attributes
  */
 ?>
-
-<ul class="sidebar-filter no-bullet">
-<?php foreach ($this->getItems() as $_item): ?>
-    <li>
-        <?php if ($_item->getCount() > 0): ?>
-            <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
-                <?php echo $_item->getLabel() ?>
-                <?php if ($this->shouldDisplayProductCount()): ?>
-                <span class="count">(<?php echo $_item->getCount() ?>)</span>
-                <?php endif; ?>
-            </a>
-        <?php else: ?>
-            <span>
-                <?php echo $_item->getLabel(); ?>
-                <?php if ($this->shouldDisplayProductCount()): ?>
-                    <span class="count">(<?php echo $_item->getCount() ?>)</span>
-                <?php endif; ?>
-            </span>
-        <?php endif; ?>
-    </li>
-<?php endforeach ?>
-</ul>
+<?php
+    $_helper = $this->helper('catalog/output');
+    $_product = $this->getProduct()
+?>
+<?php if($_additional = $this->getAdditionalData()): ?>
+    <h2><?php echo $this->__('Additional Information') ?></h2>
+    <table class="data-table" id="product-attribute-specs-table">
+        <col width="25%" />
+        <col />
+        <tbody>
+        <?php foreach ($_additional as $_data): ?>
+            <tr>
+                <th class="attr-label"><?php echo $this->escapeHtml($this->__($_data['label'])) ?></th>
+                <td class="data"><?php echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
+<?php endif;?>

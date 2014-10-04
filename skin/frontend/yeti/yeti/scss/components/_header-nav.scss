@@ -17,6 +17,28 @@ nav#nav {
 
     li {
         position: relative;
+
+        @media #{$small-only} {
+
+            &.level0.parent {
+
+                > a:after {
+                    @include css-triangle($f-dropdown-triangle-size, $gainsboro, top);
+                    float: right;
+                    margin-top: 0.5rem;
+                }
+
+                &.menu-active > a:after {
+                    @include css-triangle($f-dropdown-triangle-size, $gainsboro, bottom);
+                    margin-top: 0;
+                }
+            }
+        }
+
+        // Open second level ul on click
+        &.level0.menu-active > ul {
+            display: block;
+        }
     }
 
     a {
