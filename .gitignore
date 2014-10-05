@@ -52,6 +52,9 @@ REVISION
 .sass-cache
 skin/frontend/**/**/css/app.css
 
+# Gulp
+node_modules/
+
 # Sitemaps
 seo-sitemap/*
 !seo-sitemap/.gitkeep
