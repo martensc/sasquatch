@@ -4,19 +4,14 @@ var plumber = require('gulp-plumber');
 var prefix = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 
-// Paths
-var paths = {
-    scripts: ['js/*.js'],
-    images: ['images/**'],
-};
-
 // Compile Sass
 gulp.task('sass', function() {
     gulp.src(['scss/**/*.scss'])
         .pipe(plumber())
         .pipe(sass({
             includePaths: ['scss', 'bower_components/foundation/scss'],
-            outputStyle: 'expanded'
+            outputStyle: 'expanded',
+            imagePath: '../images'
         }))
         .pipe(prefix(
             "last 1 version", "> 1%", "ie 8", "ie 7"
