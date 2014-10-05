@@ -10,6 +10,19 @@
     }
 }
 
-input.input-text {
-    width: 45%;
+// input.input-text {
+//     width: 45%;
+// }
+
+.buttons-set {
+    @include clearfix;
+
+    p.back-link {
+        float: left;
+        line-height: 3rem;
+    }
+
+    button.button {
+        float: right;
+    }
 }
