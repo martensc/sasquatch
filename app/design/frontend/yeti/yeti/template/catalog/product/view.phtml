@@ -88,7 +88,7 @@
 
             </div>
 
-            <div class="add-to-cart-wrapper">
+            <div class="add-to-cart-wrapper medium-6 columns">
                 <?php echo $this->getChildHtml('product_type_data') ?>
                 <?php echo $this->getChildHtml('extrahint') ?>
 
@@ -114,7 +114,6 @@
 
             <?php echo $this->getChildHtml('related_products') ?>
 
-            <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                 <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
             <?php endif;?>

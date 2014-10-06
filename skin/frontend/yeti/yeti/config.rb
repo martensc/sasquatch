@@ -1,3 +1,7 @@
+require 'rubygems'
+gem 'bourbon', '~> 3.2'
+require 'bourbon'
+
 # Require any additional compass plugins here.
 add_import_path "bower_components/foundation/scss"
 

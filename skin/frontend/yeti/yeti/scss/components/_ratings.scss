@@ -1,0 +1,22 @@
+/////////////////////////////
+// Ratings
+/////////////////////////////
+
+.rating-box {
+    @include background-image-retina($file: icon_sprite, $type: png, $width: 65px, $height: 13px);
+    background-position: 0 -615px;
+    background-repeat: repeat-x;
+    height: rem-calc(13);
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 65px;
+
+    .rating {
+        @include background-image-retina($file: icon_sprite, $type: png, $width: 65px, $height: 13px);
+        background-position: 0 -600px;
+        background-repeat: repeat-x;
+        float: left;
+        height: rem-calc(13);
+        text-indent: -9999px;
+    }
+}
