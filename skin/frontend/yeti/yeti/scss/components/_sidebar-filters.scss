@@ -2,7 +2,47 @@
 // Sidebar Filters
 /////////////////////////////
 
+.block-layered-nav {
+
+    .block-title {
+        text-transform: uppercase;
+    
+        @media #{$small-only} {
+
+            display: none;
+            
+        } // END $small-only
+    }
+}
+
+p.block-subtitle--filter {
+    background: $primary-color;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 0 -1rem 1rem;
+
+    &:before {
+        @include css-triangle($f-dropdown-triangle-size, #fff, left);
+        float: left;
+        margin: 0.4rem 0.5rem 0 0;
+    }
+
+    &.active:before {
+        @include css-triangle($f-dropdown-triangle-size, #fff, top);
+        margin-top: 0.6rem;
+    }
+
+    @media #{$medium-up} {
+        display: none;
+    }
+}
+
 dl#narrow-by-list {
+
+    &.no-display {
+        display: none;
+    }
 
     dt {
         border-bottom: 1px solid $gainsboro;

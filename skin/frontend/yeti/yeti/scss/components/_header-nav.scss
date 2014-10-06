@@ -18,20 +18,21 @@ nav#nav {
     li {
         position: relative;
 
-        @media #{$small-only} {
+        &.level0.parent {
 
-            &.level0.parent {
+            > a:after {
+                @include css-triangle($f-dropdown-triangle-size, $gainsboro, top);
+                float: right;
+                margin-top: 0.5rem;
 
-                > a:after {
-                    @include css-triangle($f-dropdown-triangle-size, $gainsboro, top);
-                    float: right;
-                    margin-top: 0.5rem;
+                @media #{$large-up} {
+                    display: none;
                 }
+            }
 
-                &.menu-active > a:after {
-                    @include css-triangle($f-dropdown-triangle-size, $gainsboro, bottom);
-                    margin-top: 0;
-                }
+            &.menu-active > a:after {
+                @include css-triangle($f-dropdown-triangle-size, $gainsboro, bottom);
+                margin-top: 0;
             }
         }
 
