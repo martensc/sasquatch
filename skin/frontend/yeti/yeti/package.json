@@ -1,12 +1,8 @@
 {
   "name": "Yeti",
   "version": "1.0.0",
-  "description": "Yeti npm",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "Yeti Theme",
+  "author": "August Ash",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.8.8",
