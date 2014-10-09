@@ -13,6 +13,7 @@
     "gulp-autoprefixer": "^1.0.1",
     "gulp-minify-css": "^0.3.10",
     "gulp-plumber": "^0.6.6",
-    "gulp-sass": "^1.0.0"
+    "gulp-sass": "^1.0.0",
+    "node-bourbon": "^1.2.3"
   }
 }

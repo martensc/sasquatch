@@ -50,4 +50,5 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano-ash (~> 1.4)
-  compass (~> 1.0)
+  compass (~> 1.0.0)
+  sass (~> 3.4.0)
