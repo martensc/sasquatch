@@ -1,25 +1,27 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
-var prefix = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
+// var prefix = require('gulp-autoprefixer');
+// var minifycss = require('gulp-minify-css');
 
 // Compile Sass
 gulp.task('sass', function() {
     gulp.src(['scss/**/*.scss'])
+        .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass({
-            sourceComments: 'map',
             includePaths: [require('node-bourbon').includePaths, 'scss', 'bower_components/foundation/scss'],
-            //outputStyle: 'expanded',
+            outputStyle: 'expanded',
             imagePath: '../images'
         }))
-        .pipe(prefix(
-            "last 1 version", "> 1%", "ie 8", "ie 7"
-        ))
-        .pipe(gulp.dest('css'));
+        // .pipe(prefix(
+        //     "last 1 version", "> 1%", "ie 8", "ie 7"
+        // ))
+        //.pipe(gulp.dest('css'))
         //.pipe(minifycss())
-        //.pipe(gulp.dest('css'));
+        .pipe(sourcemaps.write('../css'))
+        .pipe(gulp.dest('css'));
 });
 
 // Watch files
@@ -27,4 +29,4 @@ gulp.task('watch', function(event) {
     gulp.watch('scss/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['sass', 'watch']);

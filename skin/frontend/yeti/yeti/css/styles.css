@@ -28,6 +28,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -147,6 +148,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -217,8 +219,7 @@ select {
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  -webkit-transition: opacity 300ms ease-out;
-          transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out;
   background-color: #008CBA;
   border-color: #007ba0;
   color: #FFFFFF; }
@@ -291,6 +292,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -655,6 +657,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -798,6 +801,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -889,6 +893,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -972,8 +977,7 @@ button, .button {
   background-color: #008CBA;
   border-color: #007295;
   color: #FFFFFF;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out; }
+  transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #007295; }
   button:hover, button:focus, .button:hover, .button:focus {
@@ -1542,6 +1546,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -1625,8 +1630,7 @@ button, .button {
   background-color: #008CBA;
   border-color: #007295;
   color: #FFFFFF;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out; }
+  transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #007295; }
   button:hover, button:focus, .button:hover, .button:focus {
@@ -1820,6 +1824,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2140,6 +2145,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2276,6 +2282,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2385,6 +2392,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2476,6 +2484,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2559,8 +2568,7 @@ button, .button {
   background-color: #008CBA;
   border-color: #007295;
   color: #FFFFFF;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out; }
+  transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #007295; }
   button:hover, button:focus, .button:hover, .button:focus {
@@ -2859,10 +2867,10 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   padding: 0.5rem;
   height: 2.3125rem;
   width: 100%;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-          transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
     box-shadow: 0 0 5px #999999;
     border-color: #999999; }
@@ -3078,6 +3086,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -3926,6 +3935,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -4032,6 +4042,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -4135,6 +4146,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -4226,6 +4238,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -4309,8 +4322,7 @@ button, .button {
   background-color: #008CBA;
   border-color: #007295;
   color: #FFFFFF;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out; }
+  transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #007295; }
   button:hover, button:focus, .button:hover, .button:focus {
@@ -4504,6 +4516,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -4722,6 +4735,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -4848,6 +4862,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -5320,6 +5335,7 @@ html, body {
   height: 100%; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -5725,8 +5741,7 @@ nav#nav ul.level0 {
   display: none; }
 @media only screen and (min-width:64.063em) {
   nav#nav ul.level0 {
-    -webkit-transition: opacity 100ms ease-out;
-            transition: opacity 100ms ease-out;
+    transition: opacity 100ms ease-out;
     display: block;
     opacity: 0;
     visibility: hidden; }
@@ -6054,6 +6069,9 @@ ul.toggle-tabs {
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .rating-box {
       background-image: url("../images/icon_sprite@2x.png");
+      -webkit-background-size: 65px 13px;
+      -moz-background-size: 65px 13px;
+      -o-background-size: 65px 13px;
       background-size: 65px 13px; } }
   .rating-box .rating {
     background-image: url("../images/icon_sprite.png");
@@ -6065,6 +6083,9 @@ ul.toggle-tabs {
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
       .rating-box .rating {
         background-image: url("../images/icon_sprite@2x.png");
+        -webkit-background-size: 65px 13px;
+        -moz-background-size: 65px 13px;
+        -o-background-size: 65px 13px;
         background-size: 65px 13px; } }
 
 .products-grid {
@@ -6115,3 +6136,5 @@ ul.product-image-thumbs a {
 
 ul.add-to-links li, ul.sharing-links li {
   display: inline-block; }
+
+/*# sourceMappingURL=../css/styles.css.map */
