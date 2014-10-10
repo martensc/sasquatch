@@ -49,6 +49,7 @@ events.txt
 REVISION
 
 # SASS
+*.css.map
 .sass-cache
 skin/frontend/**/**/css/app.css
 

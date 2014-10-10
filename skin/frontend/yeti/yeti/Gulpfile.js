@@ -9,16 +9,17 @@ gulp.task('sass', function() {
     gulp.src(['scss/**/*.scss'])
         .pipe(plumber())
         .pipe(sass({
+            sourceComments: 'map',
             includePaths: [require('node-bourbon').includePaths, 'scss', 'bower_components/foundation/scss'],
-            outputStyle: 'expanded',
+            //outputStyle: 'expanded',
             imagePath: '../images'
         }))
         .pipe(prefix(
             "last 1 version", "> 1%", "ie 8", "ie 7"
         ))
-        .pipe(gulp.dest('css'))
-        .pipe(minifycss())
         .pipe(gulp.dest('css'));
+        //.pipe(minifycss())
+        //.pipe(gulp.dest('css'));
 });
 
 // Watch files
