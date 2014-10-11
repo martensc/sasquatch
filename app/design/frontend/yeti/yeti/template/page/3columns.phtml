@@ -32,28 +32,20 @@
         <div class="main-container col3-layout large-12 columns">
             <div class="main row">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-
                 <div class="medium-12 large-9 columns">
-
                     <div class="col-wrapper row">
-
                         <?php // This left_first block will display above the main content on smaller viewports ?>
                         <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
-                            <div class="col-left sidebar col-left-first medium-4 columns"><?php echo $_leftContent;   ?></div>
+                            <div class="col-left sidebar col-left-first medium-4 columns"><?php echo $_leftContent; ?></div>
                         <?php endif; ?>
-
                         <div class="col-main medium-8 columns">
                             <?php echo $this->getChildHtml('global_messages') ?>
                             <?php echo $this->getChildHtml('content') ?>
                         </div>
-
                         <div class="col-left sidebar medium-4 columns"><?php echo $this->getChildHtml('left') ?></div>
                     </div>
-
                 </div>
-
                 <div class="col-right sidebar large-3 columns"><?php echo $this->getChildHtml('right') ?></div>
-
             </div>
         </div>
         <?php echo $this->getChildHtml('footer_before') ?>

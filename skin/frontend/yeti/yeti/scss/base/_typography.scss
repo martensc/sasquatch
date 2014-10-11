@@ -17,3 +17,25 @@ label.required em {
   color: $alert-color;
   margin-right: 0.2rem;
 }
+
+.a-center {
+    text-align: center;
+}
+
+.a-right,
+.align-right {
+    text-align: right;
+}
+
+.no-display {
+    display: none !important;
+}
+
+.nobr,
+.nowrap {
+    white-space: nowrap;
+}
+
+.width-full {
+    width: 100%;
+}

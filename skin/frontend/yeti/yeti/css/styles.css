@@ -3246,6 +3246,21 @@ label.required em {
   color: #f04124;
   margin-right: 0.2rem; }
 
+.a-center {
+  text-align: center; }
+
+.a-right, .align-right {
+  text-align: right; }
+
+.no-display {
+  display: none !important; }
+
+.nobr, .nowrap {
+  white-space: nowrap; }
+
+.width-full {
+  width: 100%; }
+
 .page-header-container {
   position: relative;
   border-bottom: 1px solid #DDDDDD;
@@ -3701,6 +3716,23 @@ ul.product-image-thumbs a {
 
 ul.add-to-links li, ul.sharing-links li {
   display: inline-block; }
+
+.box-head {
+  position: relative;
+  border-bottom: 1px solid #DDDDDD; }
+  .box-head > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 3.4; }
+
+.box-title {
+  position: relative; }
+  .box-title > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 2.4; }
 
 
 /*# sourceMappingURL=../css/styles.css.map */

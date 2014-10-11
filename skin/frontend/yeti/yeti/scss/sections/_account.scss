@@ -1,0 +1,26 @@
+/////////////////////////////
+// Account
+/////////////////////////////
+
+.box-head {
+    position: relative;
+    border-bottom: 1px solid $gainsboro;
+
+    > a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 3.4;
+    }
+}
+
+.box-title {
+    position: relative;
+
+    > a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 2.4;
+    }
+}
