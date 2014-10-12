@@ -20,7 +20,8 @@ gulp.task('sass', function() {
         }))
         .pipe(concat('styles.css'))
         .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'ie 8', 'ie 9']
+            browsers: ['last 2 versions', 'ie 8', 'ie 9'],
+            cascade: false
         }))
         .pipe(sourcemaps.write('../css'))
         .pipe(gulp.dest('css'));
