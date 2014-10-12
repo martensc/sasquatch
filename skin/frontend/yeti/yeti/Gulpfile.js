@@ -1,32 +1,35 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
-// var prefix = require('gulp-autoprefixer');
-// var minifycss = require('gulp-minify-css');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Compile Sass
 gulp.task('sass', function() {
-    gulp.src(['scss/**/*.scss'])
-        .pipe(sourcemaps.init())
+    gulp.src('scss/**/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass({
-            includePaths: [require('node-bourbon').includePaths, 'scss', 'bower_components/foundation/scss'],
-            outputStyle: 'expanded',
+            includePaths: [
+                require('node-bourbon').includePaths,
+                'scss', 'bower_components/foundation/scss'
+            ],
+            outputStyle: 'compressed',
             imagePath: '../images'
         }))
-        // .pipe(prefix(
-        //     "last 1 version", "> 1%", "ie 8", "ie 7"
-        // ))
-        //.pipe(gulp.dest('css'))
-        //.pipe(minifycss())
+        .pipe(concat('styles.css'))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        }))
         .pipe(sourcemaps.write('../css'))
         .pipe(gulp.dest('css'));
 });
 
 // Watch files
-gulp.task('watch', function(event) {
+gulp.task('watch', function() {
     gulp.watch('scss/**/*.scss', ['sass']);
 });
 
+// Default task
 gulp.task('default', ['sass', 'watch']);
