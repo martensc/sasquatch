@@ -31,12 +31,20 @@
 // where a min-width is used, remember to +1 to break correctly
 // If these are changed, they must also be updated in _var.scss
 
+// var bp = {
+//     xsmall: 479,
+//     small: 599,
+//     medium: 640,
+//     large: 979,
+//     xlarge: 1199
+// }
+
 var bp = {
     xsmall: 479,
     small: 599,
-    medium: 770,
-    large: 979,
-    xlarge: 1199
+    medium: 640,
+    large: 1024,
+    xlarge: 1440
 }
 
 // ==============================================
@@ -166,7 +174,7 @@ $j(document).ready(function () {
         // If mouse is being used on large viewport, use native hover state
         if (window.navigator.msPointerEnabled
             && event.originalEvent.pointerType == 'mouse'
-            && Modernizr.mq("screen and (min-width:" + (bp.medium + 1) + "px)")
+            && Modernizr.mq("screen and (min-width:" + (bp.large + 1) + "px)")
         ) {
             $j(this).data('has-touch', false);
             return;
@@ -194,7 +202,7 @@ $j(document).ready(function () {
             return;
         }
 
-        if(Modernizr.mq("screen and (max-width:" + bp.medium + "px)")) {
+        if(Modernizr.mq("screen and (max-width:" + bp.large + "px)")) {
             var elem = $j(this).parent();
 
             var alreadyExpanded = elem.hasClass('menu-active');
@@ -229,7 +237,7 @@ $j(document).ready(function () {
 
         // On smaller screens, allow multiple sibling sub-menus to show at once,
         // but this is a large touch device, avoid multiple sub-menus showing at once.
-        if (Modernizr.mq("screen and (min-width:" + (bp.medium + 1) + "px)")) {
+        if (Modernizr.mq("screen and (min-width:" + (bp.large + 1) + "px)")) {
             elem
                 .siblings('.sub-menu-active')
                 .removeClass('sub-menu-active')
@@ -270,7 +278,7 @@ $j(document).ready(function () {
 
     // In order to display the language switcher next to the logo, we are moving the content at different viewports,
     // rather than having duplicate markup or changing the design
-    enquire.register('(max-width: ' + bp.medium + 'px)', {
+    enquire.register('(max-width: ' + bp.large + 'px)', {
         match: function () {
             $j('.page-header-container .store-language-container').prepend($j('.form-language'));
         },
@@ -283,7 +291,7 @@ $j(document).ready(function () {
     // Enquire JS
     // ==============================================
 
-    enquire.register('screen and (min-width: ' + (bp.medium + 1) + 'px)', {
+    enquire.register('screen and (min-width: ' + (bp.large + 1) + 'px)', {
         match: function () {
             $j('.menu-active').removeClass('menu-active');
             $j('.sub-menu-active').removeClass('sub-menu-active');

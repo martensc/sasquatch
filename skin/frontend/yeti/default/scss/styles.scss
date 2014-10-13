@@ -1,34 +1,65 @@
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     default_default
- * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
+@import "base/settings";
+// @import "foundation";
 
-// ==============================================
-// Core Application / Full MQ Support
-// ==============================================
+// Or selectively include components
+// @import  "foundation/components/accordion";
+// @import  "foundation/components/alert-boxes";
+@import  "foundation/components/block-grid";
+@import  "foundation/components/breadcrumbs";
+@import  "foundation/components/button-groups";
+@import  "foundation/components/buttons";
+// @import  "foundation/components/clearing";
+@import  "foundation/components/dropdown";
+@import  "foundation/components/dropdown-buttons";
+// @import  "foundation/components/flex-video";
+@import  "foundation/components/forms";
+@import  "foundation/components/grid";
+// @import  "foundation/components/inline-lists";
+// @import  "foundation/components/joyride";
+// @import  "foundation/components/keystrokes";
+// @import  "foundation/components/labels";
+// @import  "foundation/components/magellan";
+// @import  "foundation/components/orbit";
+// @import  "foundation/components/pagination";
+// @import  "foundation/components/panels";
+// @import  "foundation/components/pricing-tables";
+// @import  "foundation/components/progress-bars";
+// @import  "foundation/components/reveal";
+// @import  "foundation/components/side-nav";
+// @import  "foundation/components/split-buttons";
+// @import  "foundation/components/sub-nav";
+// @import  "foundation/components/switches";
+@import  "foundation/components/tables";
+// @import  "foundation/components/tabs";
+// @import  "foundation/components/thumbs";
+// @import  "foundation/components/tooltips";
+// @import  "foundation/components/top-bar";
+@import  "foundation/components/type";
+// @import  "foundation/components/offcanvas";
+@import  "foundation/components/visibility";
 
-$mq-support: true;
-$mq-fixed-value: false;
+// Base
+@import "base/mixins";
+@import "base/typography";
 
-@import "framework";
-@import "core";
+// Components
+@import "components/header";
+@import "components/header-nav";
+@import "components/header-search";
+@import "components/header-language";
+@import "components/header-skip-links";
+@import "components/sidebar-block";
+@import "components/sidebar-block-viewed";
+@import "components/sidebar-filters";
+@import "components/price";
+@import "components/messages";
+@import "components/toolbar";
+@import "components/tables";
+@import "components/forms";
+@import "components/tabs";
+@import "components/ratings";
+
+// Sections
+@import "sections/product-list";
+@import "sections/product-view";
+@import "sections/account";

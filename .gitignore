@@ -51,7 +51,7 @@ REVISION
 # SASS
 *.css.map
 .sass-cache
-skin/frontend/**/**/css/app.css
+# skin/frontend/**/**/css/styles.css
 
 # Gulp
 node_modules/
