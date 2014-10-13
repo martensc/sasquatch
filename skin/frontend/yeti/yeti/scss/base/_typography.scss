@@ -39,3 +39,9 @@ label.required em {
 .width-full {
     width: 100%;
 }
+
+h2.legend {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-bottom: 1px solid $gainsboro;
+}
