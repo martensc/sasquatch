@@ -11,10 +11,7 @@ gulp.task('sass', function() {
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
-            includePaths: [
-                require('node-bourbon').includePaths,
-                'scss', 'bower_components/foundation/scss'
-            ],
+            includePaths: [require('node-bourbon').includePaths],
             outputStyle: 'compressed',
             imagePath: '../images'
         }))
