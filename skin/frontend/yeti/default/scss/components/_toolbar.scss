@@ -41,6 +41,11 @@
     @include clearfix;
     padding: 0.5rem 0;
 
+    select {
+        width: auto;
+        margin-bottom: 0;
+    }
+
     p.amount {
         float: left;
         line-height: 2.2rem;

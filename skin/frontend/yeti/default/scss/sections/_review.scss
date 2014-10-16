@@ -1,0 +1,17 @@
+/////////////////////////////
+// Review
+/////////////////////////////
+
+.box-reviews {
+
+    dd {
+        border-bottom: 1px solid $gainsboro;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .review-meta {
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+}

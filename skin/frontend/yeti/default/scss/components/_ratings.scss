@@ -2,12 +2,23 @@
 // Ratings
 /////////////////////////////
 
+.ratings {
+
+    .amount {
+        display: block;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+    }
+}
+
 .rating-box {
     @include background-image-retina($file: icon_sprite, $type: png, $width: 65px, $height: 13px);
     background-position: 0 -615px;
     background-repeat: repeat-x;
+    display: inline-block;
     height: rem-calc(13);
     overflow: hidden;
+    text-align: center;
     text-indent: -9999px;
     width: 65px;
 

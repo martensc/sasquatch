@@ -56,7 +56,7 @@ nav#nav {
 
         // Second level
         ul.level0 {
-            @include single-transition($property: opacity, $speed: 100ms);
+            transition: opacity 0.3s;
             display: block;
             opacity: 0;
             visibility: hidden;
