@@ -12,7 +12,7 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: ['scss', 'bower_components/foundation/scss'],
-            outputStyle: 'compressed',
+            outputStyle: 'expand',
             imagePath: '../images'
         }))
         .pipe(concat('styles.css'))

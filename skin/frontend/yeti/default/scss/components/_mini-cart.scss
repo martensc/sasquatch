@@ -1,0 +1,70 @@
+/////////////////////////////
+// Mini Cart
+/////////////////////////////
+
+#header-cart {
+
+    .minicart-wrapper {
+        @include loadingOverlay();
+        clear: both;
+        position: relative;
+    }
+
+    #minicart-success-message {
+        color: $success-color;
+        text-align: center;
+    }
+
+    .block-subtitle {
+        text-align: center;
+
+        .close {
+            float: right;
+        }
+    }
+
+    a.product-image {
+        display: block;
+        float: left;
+    }
+
+    .product-details {
+        margin-left: 4rem;
+    }
+
+    .qty {
+        float: left;
+        width: 3rem;
+    }
+
+    .quantity-button {
+        float: left;
+        width: 3rem;
+        margin-left: 0.5rem;
+
+        &[disabled] {
+            transition: opacity 0.1s;
+            opacity: 0;
+        }
+    }
+
+    .subtotal {
+        font-size: 0.9rem;
+        text-align: center;
+        background: $white-smoke;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .minicart-actions {
+        @include clearfix;
+
+        .cart-link {
+            float: left;
+        }
+
+        .minicart {
+            float: right;
+        }
+    }
+}

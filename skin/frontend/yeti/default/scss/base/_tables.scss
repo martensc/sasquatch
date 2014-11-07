@@ -1,0 +1,19 @@
+/////////////////////////////
+// Tables
+/////////////////////////////
+
+table {
+    width: 100%;
+
+    &.stripped {
+        border: none;
+
+        tr {
+            background: none;
+
+            th, td {
+                padding: 0;
+            }
+        }
+    }
+}

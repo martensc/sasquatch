@@ -1,0 +1,16 @@
+/////////////////////////////
+// Buttons
+/////////////////////////////
+
+button,
+.button {
+
+    &.link {
+        background: transparent;
+        color: $primary-color;
+
+        &:hover {
+            color: scale-color($primary-color, $lightness: -14%);
+        }
+    }
+}
