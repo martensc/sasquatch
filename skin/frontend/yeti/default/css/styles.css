@@ -3619,5 +3619,15 @@ ul.add-to-links li, ul.sharing-links li {
     right: 0;
     line-height: 2.4; }
 
+.title-buttons {
+  position: relative; }
+  .title-buttons .checkout-types.top {
+    position: absolute;
+    top: 0;
+    right: 0; }
+    @media only screen and (max-width: 40em) {
+      .title-buttons .checkout-types.top {
+        display: none; } }
+
 
 /*# sourceMappingURL=../css/styles.css.map */

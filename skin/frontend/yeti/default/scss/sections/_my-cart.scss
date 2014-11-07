@@ -1,0 +1,17 @@
+/////////////////////////////
+// My Cart
+/////////////////////////////
+
+.title-buttons {
+    position: relative;
+
+    .checkout-types.top {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @media #{$small-only} {
+            display: none;
+        }
+    }
+}
