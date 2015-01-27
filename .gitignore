@@ -1,0 +1,39 @@
+# Ignore
+/*
+/app/.htaccess
+/app/Mage.php
+/app/code/*
+/app/etc/*
+/app/locale/*
+/app/design/adminhtml/*
+/app/design/frontend/*
+/app/design/install/*
+
+/skin/adminhtml/*
+/skin/frontend/*
+/skin/install/*
+
+/errors/*
+/errors/default/*
+
+# SASS
+/skin/frontend/yeti/CLIENT/assets/css/app.css
+/skin/frontend/yeti/CLIENT/assets/js/lib.min.js
+/skin/frontend/yeti/CLIENT/assets/js/prodview.min.js
+*.map
+
+# NPM and Bower
+node_modules
+bower_components
+
+# Keep
+!/.gitignore
+!/app/
+!/app/design/frontend/yeti/
+!/skin/
+!/skin/frontend/yeti/
+!/skin/frontend/yeti/default/assets/css/app.css.map
+!/errors/
+!/errors/design.xml
+!/errors/local.xml.sample
+!/errors/yeti/
