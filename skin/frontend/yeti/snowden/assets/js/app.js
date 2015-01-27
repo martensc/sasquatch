@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
 
     // Open subnav on icon click
     jQuery('#nav .ico-dropdown').click(function() {
-        jQuery(this).siblings('.level0').slideToggle();
+        jQuery(this).siblings('ul').slideToggle();
     });
 
     // Add div wrapper to all tables
