@@ -1,0 +1,61 @@
+/**
+ * Wicked awesome responsive theme for Magento.
+ *
+ * @category    Ash
+ * @package     Ash_Yeti
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/* Reset ================================================================================= */
+a {
+    /*color: #1e7ec8;*/ /* Set to theme a tag color */
+}
+
+/* Tools */
+.hidden       { display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }
+.nobr         { white-space:nowrap !important; }
+.wrap         { white-space:normal !important; }
+.a-left       { text-align:left !important; }
+.a-center     { text-align:center !important; }
+.a-right      { text-align:right !important; }
+.v-top        { vertical-align:top; }
+.v-middle     { vertical-align:middle; }
+.f-left,
+.left         { float:left !important; }
+.f-right,
+.right        { float:right !important; }
+.f-none       { float:none !important; }
+.f-fix        { float:left; width:100%; }
+.no-display   { display:none; }
+.no-margin    { margin:0 !important; }
+.no-padding   { padding:0 !important; }
+.no-bg        { background:none !important; }
+/* ======================================================================================= */
+
+a.logo {
+    display: block;
+    text-align: center;
+}
+
+.page {
+    box-shadow: 0 0 20px #ddd;
+    padding: 2rem;
+    margin: 4rem 0;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #888;
+}
+
+.trace {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+    margin: 1rem 0;
+}

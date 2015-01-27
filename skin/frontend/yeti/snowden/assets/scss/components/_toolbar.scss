@@ -1,0 +1,101 @@
+/////////////////////////
+// Toolbar
+/////////////////////////
+
+// General toolbar styles
+.toolbar {
+    margin-bottom: 2rem;
+
+    label {
+        display: inline-block;
+    }
+
+    select {
+        display: inline-block;
+        width: auto;
+        padding-right: 1.5rem;
+        margin-bottom: 0;
+    }
+}
+
+// Pager block styles
+.pager {
+    @include clearfix;
+    border-bottom: 1px solid $gainsboro;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    &.no-border {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .amount {
+        @extend %label;
+        display: block;
+        float: left;
+        line-height: 2.3;
+        margin: 0 2rem 0 0;
+
+        @media #{$small-only} {
+            display: none;
+        }
+    }
+
+    .pages {
+        display: block;
+        float: left;
+
+        strong {
+            display: block;
+            float: left;
+            @extend %label;
+            line-height: 2.3;
+        }
+
+        ul.pagination {
+            position: relative;
+            top: rem-calc(4);
+            display: inline-block;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            list-style: none;
+        }
+    }
+
+    .limiter {
+        display: block;
+        float: right;
+
+        label {
+            display: inline-block;
+        }
+
+        select {
+            display: inline-block;
+            width: auto;
+            padding-right: 1.5rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Sorting block styles
+.sorter {
+    @include clearfix;
+
+    .view-mode {
+        display: block;
+        float: left;
+        line-height: 2.3;
+        margin-bottom: 0;
+    }
+
+    .sort-by {
+        display: block;
+        float: right;
+    }
+}

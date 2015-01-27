@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--
+<?php
 /**
  * Wicked awesome responsive theme for Magento.
  *
@@ -8,7 +7,10 @@
  * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
--->
-<config>
-    <skin>yeti</skin>
-</config>
+?>
+
+<?php $_product = Mage::registry('product'); ?>
+<div class="buttons-set">
+    <hr>
+    <a class="back-link button link" href="<?php echo $_product->getProductUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to Main Product Info') ?></a>
+</div>

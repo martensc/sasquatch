@@ -1,0 +1,25 @@
+/////////////////////////
+// Price
+/////////////////////////
+
+.old-price,
+.special-price,
+.price-from,
+.price-to {
+    margin-bottom: 0;
+}
+
+.old-price {
+    opacity: 0.5;
+
+    .price {
+        text-decoration: line-through;
+    }
+}
+
+.special-price {
+
+    .price {
+        color: $success-color;
+    }
+}

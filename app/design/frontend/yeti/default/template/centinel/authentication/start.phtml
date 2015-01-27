@@ -1,0 +1,24 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento.
+ *
+ * @category    Ash
+ * @package     Ash_Yeti
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<form name="validation_form" id="validation_form" action="<?php echo $this->getAcsUrl();?>" method="post">
+    <div class="fieldset">
+        <input type="hidden" name="PaReq" value="<?php echo $this->getPaReq()?>" />
+        <input type="hidden" name="TermUrl" value="<?php echo $this->getTermUrl()?>" />
+        <input type="hidden" name="MD" value="<?php echo $this->getMd()?>" />
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+window.onload = function(){
+    document.getElementById('validation_form').submit();
+};
+//]]>
+</script>

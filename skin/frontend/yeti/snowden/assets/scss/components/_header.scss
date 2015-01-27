@@ -1,0 +1,30 @@
+/////////////////////////
+// Header
+/////////////////////////
+
+.logo-wrap {
+
+    // Add bottom margin for inline display at breakpoint
+    @media #{$medium-up} {
+        margin-bottom: 1rem;
+    }
+
+    .logo {
+        display: block;
+        font-size: 1rem;
+        line-height: 1;
+        text-align: center;
+        margin: 1rem 0;
+
+        // Remove margin and align left at breakpoint
+        @media #{$medium-up} {
+            display: inline-block;
+            text-align: left;
+            margin: 0;
+        }
+    }
+
+    a {
+        display: block;
+    }
+}

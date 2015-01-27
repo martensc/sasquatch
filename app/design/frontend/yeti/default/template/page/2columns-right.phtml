@@ -1,0 +1,52 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento.
+ *
+ * @category    Ash
+ * @package     Ash_Yeti
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+
+<!DOCTYPE html>
+<!-- Sorry, no IE8 support! -->
+<!-- @see http://foundation.zurb.com/docs/compatibility.html -->
+<!--[if lte IE 8]> <html lang="<?php echo $this->getLang(); ?>" class="no-js ie ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<?php echo $this->getLang(); ?>" class="no-js"> <!--<![endif]-->
+
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<?php echo $this->getChildHtml('global_notices') ?>
+<div class="page row">
+    <div class="large-12 columns">
+        <?php echo $this->getChildHtml('header') ?>
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
+        <div class="main-container col2-right-layout row">
+            <div class="main medium-8 columns">
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+                </div>
+            </div>
+            <div class="col-right sidebar medium-4 columns">
+                <?php echo $this->getChildHtml('right') ?>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml('footer_before') ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('global_cookie_notice') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

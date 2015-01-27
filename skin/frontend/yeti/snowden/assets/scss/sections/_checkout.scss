@@ -1,0 +1,143 @@
+/////////////////////////
+// Checkout
+/////////////////////////
+
+// Onepage checkout sidebar steps
+.opc-block-progress {
+    margin-top: 2rem;
+
+    @media #{$medium-up} {
+        margin-top: 1.5rem;
+    }
+
+    // Step styles
+    .progress-item {
+        border-bottom: 1px solid $gainsboro;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    // Set font size for completed step content
+    dd.complete {
+        font-size: 0.9rem;
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// Onepage checkout general styles
+.opc {
+    margin: 0;
+
+    ul, ol {
+        margin: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    // Step sections
+    .section {
+        transition: opacity 0.3s;
+        opacity: 0.45;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        // Active step wrapper
+        &.active {
+            box-shadow: 0 3px 15px rgba($black, 0.15);
+            opacity: 1;
+        }
+    }
+}
+
+// Step title styles
+.step-title {
+    padding: 0.5rem 1rem;
+
+    // Active step title
+    .active & {
+        background: $gainsboro;
+    }
+
+    // Step number
+    .number {
+        display: inline-block;
+        background: $smoke;
+        border-radius: 50%;
+        width: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        margin-right: 0.5rem;
+
+        // Success step number
+        .allow & {
+            background: $success-color;
+            color: $white;
+        }
+
+        // Active step number
+        .active & {
+            background: $white;
+            box-shadow: 0 0 8px rgba($black, 0.1);
+            color: inherit;
+        }
+    }
+
+    // Step title
+    .opc-title {
+        display: inline-block;
+        line-height: 2rem;
+        margin: 0;
+    }
+
+    // Edit step link
+    .opc-edit {
+        font-size: 0.8rem;
+        line-height: 2rem;
+    }
+}
+
+// Step content
+.step {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+// Checkout Review
+#checkout-review-table {
+
+    // Style itemized list 
+    .item-options {
+
+        dd {
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+    }
+
+    // Enlarge font size for grand total
+    tfoot tr.last td {
+        font-size: 1.2rem;
+    }
+}
+
+.order-review {
+
+    // Forget item styles
+    .f-left {
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+}

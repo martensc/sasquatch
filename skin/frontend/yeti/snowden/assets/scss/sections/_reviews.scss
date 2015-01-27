@@ -1,0 +1,30 @@
+/////////////////////////
+// Reviews
+/////////////////////////
+
+// Review page styles
+.product-review {
+    @include clearfix;
+
+    @media #{$medium-up} {
+
+        .product-img-box {
+            float: left;
+            width: 33%;
+            margin-bottom: 1rem;
+        }
+
+        .product-details {
+            margin: 0 1rem 0 36%;
+        }
+
+        .buttons-set {
+            clear: both;
+        }
+    }
+}
+
+.review-meta {
+    font-size: 0.9rem;
+    font-style: italic;
+}

@@ -1,0 +1,99 @@
+/////////////////////////
+// Multi Address
+/////////////////////////
+
+// Checkout Steps
+.checkout-progress {
+    @include clearfix;
+
+    li {
+        background: $white-smoke;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid $gainsboro;
+
+        // Remove border for last element
+        &.last {
+            border-bottom: none;
+        }
+        
+        // Li active styles
+        &.active {
+            background: $gainsboro;
+        }
+    }
+
+    @media #{$medium-up} {
+
+        // Display li's inline at breakpoint
+        li {
+            border-right: 1px solid $gainsboro;
+            border-bottom: none;
+            float: left;
+            width: 20%;
+
+            // Remove border for last element
+            &.last {
+                border-right: none;
+            }
+        }
+    }
+
+    @media #{$medium-only} {
+    
+        // Set word break for medium breakpoint only
+        span {
+            word-spacing: rem-calc(300);
+        }
+    }
+}
+
+// Multi address
+#multiship-addresses-table {
+
+    // Set the width of select list to auto so the text display
+    td select {
+        width: auto;
+    }
+}
+
+// Multi shipping
+#shipping_method_form {
+
+    .box {
+        margin-bottom: 2rem;
+    }
+
+    .box-content {
+        font-size: 0.9rem;
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// Multi Overview
+#review-order-form {
+
+    .box {
+        margin-bottom: 2rem;
+    }
+
+    .box-content {
+        font-size: 0.9rem;
+
+        p {
+            font-size: 0.9rem;
+        }
+    } 
+}
+
+#checkout-review-submit {
+    text-align: right;
+
+    big {
+        display: block;
+        margin-bottom: 1rem;
+    }
+}

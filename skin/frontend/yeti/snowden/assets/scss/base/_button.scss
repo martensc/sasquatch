@@ -1,0 +1,19 @@
+/////////////////////////
+// Button
+/////////////////////////
+
+.button,
+button {
+
+    // Button with no bg color
+    &.link {
+        background: transparent;
+        color: $anchor-font-color;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:hover {
+            color: $anchor-font-color-hover;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+/////////////////////////
+// Product List
+/////////////////////////
+
+// Grid styles
+.products-grid {
+
+    // Center elements in li
+    .item {
+        list-style: none;
+        text-align: center;
+    }
+
+    // Title styles
+    .product-name {
+        font-size: 1.5rem;
+    }
+
+    // Price styles
+    .price-box {
+        margin-bottom: 0.5rem;
+    }
+
+    // Button bottom margin
+    .btn-cart {
+        margin-bottom: 0.5rem;
+    }
+}
+
+// List styles
+.products-list {
+    @extend .products-grid; // Extend the grid styles into the list
+    margin: 0;
+
+    // li styles
+    .item {
+        @include clearfix;
+        border-bottom: 1px solid $gainsboro;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+
+        &.last {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        @media #{$medium-up} {
+            text-align: left;
+        }
+    }
+
+    // Image styles
+    .product-image {
+
+        @media #{$medium-up} {
+            float: left;
+            width: 34%;
+        }
+    }
+
+    // Product detail styles
+    .product-shop {
+
+        @media #{$medium-up} {
+            margin-left: 38%;
+        }
+    }
+
+    // Copy block
+    .desc {
+        margin-bottom: 1rem;
+    }
+}

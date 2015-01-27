@@ -1,0 +1,20 @@
+/////////////////////////
+// Tabs
+/////////////////////////
+
+@media #{$small-only} {
+
+    .tabs {
+
+        dd {
+            width: 100%;
+        }
+    }
+}
+
+.tabs-content {
+
+    .content > h2 {
+        font-size: 1.8rem;
+    }
+}

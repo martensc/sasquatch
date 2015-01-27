@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--
+<?php
 /**
  * Wicked awesome responsive theme for Magento.
  *
@@ -8,7 +7,7 @@
  * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
--->
-<config>
-    <skin>yeti</skin>
-</config>
+
+?>
+<a href="<?php echo $this->getItemRemoveUrl($this->getItem()); ?>" onclick="return confirmRemoveWishlistItem();" title="<?php echo $this->__('Remove Item') ?>"
+    class="btn-remove btn-remove2"><i class="fa fa-trash-o"></i></a>

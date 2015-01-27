@@ -1,0 +1,22 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento.
+ *
+ * @category    Ash
+ * @package     Ash_Yeti
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('Popular Search Terms') ?></h1>
+</div>
+<?php if( sizeof($this->getTerms()) > 0 ): ?>
+    <ul class="tags-list no-bullet">
+        <?php foreach ($this->getTerms() as $_term): ?>
+            <li><a href="<?php echo $this->getSearchUrl($_term) ?>" style="font-size:<?php echo $_term->getRatio()*70+75 ?>%;"><?php echo $this->escapeHtml($_term->getName()) ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p class="note-msg"><?php echo $this->__('There are no search terms available.'); ?></p>
+<?php endif; ?>

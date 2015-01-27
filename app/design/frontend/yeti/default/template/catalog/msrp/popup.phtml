@@ -1,0 +1,44 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento.
+ *
+ * @category    Ash
+ * @package     Ash_Yeti
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for MAP popup
+ *
+ */
+?>
+<?php if (Mage::helper('catalog')->isMsrpEnabled()): ?>
+<div id="map-popup" class="map-popup" style="display:none;">
+    <a href="#" class="map-popup-close" id="map-popup-close"><i class="fa fa-times"></i></a>
+    <div class="map-popup-arrow"></div>
+    <div class="map-popup-heading"><h4 id="map-popup-heading"></h4></div>
+    <div class="map-popup-content" id="map-popup-content">
+        <div class="map-popup-checkout">
+            <form action="" method="POST" id="product_addtocart_form_from_popup">
+                <input type="hidden" name="product" class="product_id" value="" id="map-popup-product-id" />
+                <div class="additional-addtocart-box">
+                    <?php echo $this->getChildHtml(); ?>
+                </div>
+                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button small btn-cart" id="map-popup-button"><?php echo $this->__('Add to Cart') ?></button>
+            </form>
+        </div>
+        <div class="map-popup-msrp" id="map-popup-msrp-box"><strong><?php echo $this->__('Price'); ?>:</strong> <span style="text-decoration:line-through;" id="map-popup-msrp"></span></div>
+        <div class="map-popup-price" id="map-popup-price-box"><strong><?php echo $this->__('Actual Price'); ?>:</strong> <span id="map-popup-price"></span></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            document.observe("dom:loaded", Catalog.Map.bindProductForm);
+        //]]>
+        </script>
+    </div>
+    <hr>
+    <div class="map-popup-text" id="map-popup-text"><?php echo Mage::helper('catalog')->getMsrpExplanationMessage(); ?></div>
+    <div class="map-popup-text" id="map-popup-text-what-this"><?php echo Mage::helper('catalog')->getMsrpExplanationMessageWhatsThis(); ?></div>
+</div>
+<?php endif; ?>
