@@ -1,0 +1,33 @@
+/////////////////////////
+// Map Popup
+/////////////////////////
+
+.map-popup {
+    position: absolute;
+    background: $white;
+    border: 5px solid $gainsboro;
+    width: rem-calc(300);
+    text-align: left;
+    padding: 1rem;
+    margin: 0.8rem 0 0;
+    z-index: 100;
+
+    @media #{$medium-up} {
+        width: rem-calc(450);
+    
+        &.map-popup-left {
+            left: auto !important;
+            right: 1rem;
+        }
+
+        &.map-popup-right {
+            left: 1rem !important;
+        }
+    }
+}
+
+.map-popup-close {
+    position: absolute;
+    top: 0.25rem;
+    right: 1rem;
+}

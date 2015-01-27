@@ -1,0 +1,62 @@
+/////////////////////////
+// Ratings
+/////////////////////////
+
+.ratings {
+
+    .amount {
+        display: block;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+    }
+}
+
+// Disabled start ratings
+.rating-box {
+    @include bg-image-retina($file: ico_ratings, $type: png, $width: 70px, $height: 13px);
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    display: inline-block;
+    height: rem-calc(13);
+    overflow: hidden;
+    text-align: center;
+    text-indent: -9999em;
+    width: rem-calc(70);
+
+    // Active star ratings
+    .rating {
+        @include bg-image-retina($file: ico_ratings, $type: png, $width: 70px, $height: 13px);
+        background-position: 0 -1rem;
+        background-repeat: repeat-x;
+        float: left;
+        height: rem-calc(13);
+        text-indent: -9999em;
+    }
+}
+
+// Strip away table styles for ratings table
+.ratings-table {
+    border: none;
+
+    tr {
+        margin-right: 1rem;
+
+        // Float table rows in reviews block so they display inline
+        .box-reviews & {
+            float: left;
+        }
+
+        // Remove nth styling
+        &:nth-of-type(2n) {
+            background: none;
+        }
+    }
+
+    th, td {
+        padding: 0.25rem 0;
+    }
+
+    th {
+        padding-right: 0.5rem;
+    }
+}

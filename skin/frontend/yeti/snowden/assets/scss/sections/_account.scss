@@ -1,0 +1,125 @@
+/////////////////////////
+// Account
+/////////////////////////
+
+// General styles
+.box-account {
+    margin-bottom: 2rem;
+}
+
+// Account header styles
+.box-head {
+    @include clearfix;
+
+    h3, a {
+        display: inline-block;
+    }
+
+    a {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-left: 1rem;
+    }
+}
+
+// Account block styles
+.box-info {
+
+    .box-title {
+        @include clearfix;
+        border-bottom: 1px solid $gainsboro;
+        margin-bottom: 1rem;
+
+        h5 {
+            float: left;
+        }
+
+        a {
+            float: right;
+            font-size: 0.8rem;
+        }
+    }
+
+    .box-content {
+        clear: both;
+        margin-bottom: 1rem;
+    }
+}
+
+// 
+// .my-account {
+
+//     .page-title.title-buttons {
+//         @include clearfix;
+
+//         h1 {
+//             float: left;
+//         }
+//     }
+// }
+
+// Remove list styles
+.addresses-list {
+    clear: both;
+
+    ol li {
+        list-style: none;
+    }
+}
+
+// My orders
+dl.order-info {
+
+    dt, dd {
+        display: inline-block;
+    }
+}
+
+#order-info-tabs {
+    margin-bottom: 0;
+}
+
+.order-info-box {
+
+    .box-content {
+        margin-bottom: 1rem;
+    }
+}
+
+// My recent reviews and tags
+ol#my_recent_reviews,
+ol#my_recent_tags {
+    margin: 0;
+
+    ul {
+        display: inline-block;
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    > li {
+        @include clearfix;
+        list-style: none;
+        margin-bottom: 1rem;
+    }
+
+    .number {
+        float: left;
+        display: inline-block;
+        background: $white-smoke;
+        border-radius: 50%;
+        width: 1.7rem;
+        text-align: center;
+        margin-right: 0.5rem;
+    }
+
+    .details {
+        float: left;
+    }
+
+    .product-name {
+        margin: 0;
+    }
+}

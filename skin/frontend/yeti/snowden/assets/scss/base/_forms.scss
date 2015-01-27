@@ -1,0 +1,28 @@
+/////////////////////////
+// Forms
+/////////////////////////
+
+label.required {
+
+    > em {
+        color: $alert-color;
+        margin-right: 0.25rem;
+    }
+}
+
+em.required {
+    color: $alert-color;
+    margin-right: 0.25rem;
+}
+
+p.required {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: $alert-color;
+    margin-bottom: 0;
+}
+
+.buttons-set button[disabled],
+input[disabled] {
+    display: none;
+}

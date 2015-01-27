@@ -1,0 +1,58 @@
+/////////////////////////
+// Cart
+/////////////////////////
+
+// Buttons and title styles
+.title-buttons {
+    position: relative;
+
+    @media #{$large-up} {
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+// General checkout table item styles
+table {
+
+    // Style itemized list 
+    .item-options {
+
+        dd {
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+    }
+
+    // Add width to qty input field
+    .input-text.qty {
+        width: 3rem;
+    }
+}
+
+// My cart styles
+.cart-table {
+
+    // Product image width
+    .product-image {
+        display: block;
+        min-width: rem-calc(120);
+    }
+}
+
+// Crosssell block
+.crosssell {
+    margin-bottom: 2rem;
+}
+
+.totals {
+
+    // Enlarge font size for grand total
+    tfoot td {
+        font-size: 1.2rem;
+    }
+}

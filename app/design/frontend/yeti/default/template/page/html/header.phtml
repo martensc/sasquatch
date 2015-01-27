@@ -1,0 +1,48 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento Enterprise.
+ *
+ * @category    Ash
+ * @package     Ash_Yetiee
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<div class="mobile-top-wrap row small-collapse show-for-small-only">
+    <div class="mobile-top-links large-12 columns">
+        <ul class="button-group even-2">
+            <li><a class="button small secondary expand no-margin" href="#mobile-account"><i class="fa fa-user"></i> <?php echo $this->__('Account') ?></a></li>
+            <li><a class="button small secondary expand no-margin" href="#mobile-search"><i class="fa fa-search"></i> <?php echo $this->__('Search') ?></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="header row">
+
+    <div id="mobile-account" class="top-links mobile-top large-12 columns">
+        <?php echo $this->getChildHtml('topLinks') ?>
+        <?php //echo $this->getChildHtml('store_language') ?>
+    </div>
+
+    <?php echo $this->getChildHtml('topSearch') ?>
+
+    <div class="logo-wrap medium-6 medium-pull-6 columns">
+        <?php if ($this->getIsHomePage()): ?>
+        <h1 class="logo"><a href="<?php echo $this->getUrl('') ?>">
+            <img src="<?php echo $this->getSkinUrl('assets/images/logo.png') ?>" alt="<?php echo $this->getLogoAlt() ?>" title="<?php echo $this->getLogoAlt() ?>" />
+        </a></h1>
+        <?php else: ?>
+        <span class="logo"><a href="<?php echo $this->getUrl('') ?>">
+            <img src="<?php echo $this->getSkinUrl('assets/images/logo.png') ?>" alt="<?php echo $this->getLogoAlt() ?>" title="<?php echo $this->getLogoAlt() ?>" />
+        </a></span>
+        <?php endif; ?>
+    </div>
+</div>
+
+<?php echo $this->getChildHtml('topMenu') ?>
+
+<?php echo $this->getChildHtml('topContainer'); ?>

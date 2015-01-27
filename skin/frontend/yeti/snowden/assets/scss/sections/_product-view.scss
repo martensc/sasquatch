@@ -1,0 +1,122 @@
+/////////////////////////
+// Product View
+/////////////////////////
+
+.product-essential {
+    margin-bottom: 3rem;
+}
+
+// Show this page title for small devices only
+.product-name-mobile {
+    font-size: 1.5rem;
+    line-height: $header-line-height;
+    margin-top: $header-top-margin;
+    margin-bottom: $header-bottom-margin;
+}
+
+.product-shop {
+
+    // Product view price block
+    .price-box {
+        margin-bottom: 1rem;
+
+        .price {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.product-options {
+    border: 1px solid $gainsboro;
+    padding: 1rem;
+}
+
+.product-options-bottom {
+    background: $snow;
+    border: 1px solid $gainsboro;
+    border-top: none;
+    padding: 1rem;
+
+    // Hide pricebox
+    .price-box {
+        display: none;
+    }
+}
+
+.add-to-box {
+    background: $snow;
+    border: 1px solid $gainsboro;
+    padding: 1rem; 
+    margin-bottom: 1rem;
+}
+
+.add-to-cart {
+
+    label {
+        display: inline-block;
+    }
+
+    .input-text {
+        display: inline-block;
+        width: 3rem;
+        margin-right: 1rem;
+    }
+}
+
+// Image gallery zoom
+.product-image-gallery {
+    position: relative;
+
+    .gallery-image {
+        display: none;
+
+        &.visible {
+            display: block;
+
+            &.hidden {
+                visibility: hidden;
+            }
+        }
+    }
+
+    // Loading overlay
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    &:before {
+        background-color: white;
+        opacity: 0.8;
+        z-index: 2;
+    }
+
+    &:after {
+        background: image-url('opc-ajax-loader.gif') no-repeat center;
+        z-index: 3;
+    }
+
+    &.loading {
+        position: relative;
+
+        &:before,
+        &:after {
+            display: block;
+        }
+    }
+}
+
+// Image thumbnails
+.more-views {
+
+    li {
+        display: inline-block;
+        margin: 0 0.5rem 0.5rem 0;
+    }
+}

@@ -1,0 +1,40 @@
+/////////////////////////
+// Product Sidebar
+/////////////////////////
+
+.block-layered-nav {
+
+    .btn-remove {
+        margin-left: 1rem;
+    }
+
+    ol {
+        margin: 0;
+
+        li {
+            list-style: none;
+            clear: both;
+        }
+    }
+
+    .actions {
+        font-size: 0.9rem;
+        text-align: right;
+        margin-top: 0.5rem;
+    }
+}
+
+#narrow-by-list {
+
+    dt {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    dd {
+        border-bottom: 1px solid $gainsboro;
+        color: $jumbo;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}

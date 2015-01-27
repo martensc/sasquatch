@@ -1,0 +1,23 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento Enterprise.
+ *
+ * @category    Ash
+ * @package     Ash_Yetiee
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php if($crumbs && is_array($crumbs)): ?>
+<nav class="breadcrumbs hide-for-small-only">
+    <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
+        <?php if($_crumbInfo['link']): ?>
+            <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->escapeHtml($_crumbInfo['title']) ?>"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></a>
+        <?php elseif($_crumbInfo['last']): ?>
+            <a class="current" href="#"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></a>
+        <?php else: ?>
+            <a href="#"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></a>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</nav>
+<?php endif; ?>

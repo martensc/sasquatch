@@ -1,0 +1,39 @@
+/////////////////////////
+// Top Links
+/////////////////////////
+
+.top-links {
+    display: none;
+    margin: 1rem 0;
+
+    // Display top links at breakpoint
+    @media #{$medium-up} {
+        display: block !important;
+        margin: 0.5rem 0 2rem;
+    }
+
+    ul.links {
+        list-style: none;
+        margin: 0;
+
+        // Align links right at breakpoint
+        @media #{$medium-up} {
+            font-size: 0.9rem;
+            text-align: right;
+        }
+    }
+
+    li {
+        display: block;
+
+        // Display li's inline at breakpoint
+        @media #{$medium-up} {
+            display: inline-block;
+            margin-left: 1rem;
+        }
+    }
+
+    a {
+        display: block;
+    }
+}

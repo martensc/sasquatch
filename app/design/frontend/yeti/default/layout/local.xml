@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Wicked awesome responsive theme for Magento Enterprise.
+ *
+ * @category    Ash
+ * @package     Ash_Yetiee
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+
+<!--==============================================
+Default layout, loads most of the pages
+===============================================-->
+<default>
+
+    <!-- Remove Magento default blocks -->
+    <remove name="left.permanent.callout" />
+    <remove name="right.permanent.callout" />
+    <remove name="paypal.partner.right.logo" />
+    <!-- <remove name="cart_sidebar" />
+    <remove name="catalog.compare.sidebar" />
+    <remove name="left.reports.product.viewed" />
+    <remove name="right.reports.product.viewed" />
+    <remove name="right.reports.product.compared" /> -->
+
+    <reference name="head">
+
+        <!-- Remove Magento default CSS files -->
+        <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+        <action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name></action>
+        <action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
+        <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
+
+        <!-- Remove Magento default JS files -->
+        <action method="removeItem"><type>skin_js</type><name>js/ie6.js</name></action>
+        <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
+
+        <!-- Add generated Foundation CSS file -->
+        <action method="addCss"><stylesheet>assets/css/app.css</stylesheet></action>
+
+        <!-- Add generated vendor dependencies -->
+        <action method="addItem"><type>skin_js</type><name>assets/js/lib.min.js</name></action>
+
+        <!-- Add in app js -->
+        <action method="addItem"><type>skin_js</type><name>assets/js/app.js</name></action>
+
+    </reference>
+
+</default>
+<!--==============================================
+END Default layout, loads most of the pages
+===============================================-->
+
+
+
+
+
+<!--==============================================
+Catalog.xml
+===============================================-->
+<catalog_custom>
+    <!-- Change category page(s) layout to 2 columns left -->
+    <update handle="page_two_columns_left" />
+
+    <reference name="head">
+        <!-- Add in attribute swatches js -->
+        <action method="addItem"><type>skin_js</type><name>assets/js/configurableswatches/product-media.js</name></action>
+        <action method="addItem"><type>skin_js</type><name>assets/js/configurableswatches/swatches-list.js</name></action>
+    </reference>
+
+    <reference name="content">
+        <reference name="category.products">
+            <reference name="product_list">
+                <!-- Inserting swatches info to template -->
+                <block type="core/text_list" name="product_list.name.after" as="name.after">
+                    <block type="core/template" name="product_list.swatches" template="configurableswatches/catalog/product/list/swatches.phtml" />
+                </block>
+                <!-- Inserting swatches info to template -->
+                <block type="core/text_list" name="product_list.after" as="after">
+                    <block type="configurableswatches/catalog_media_js_list" name="configurableswatches.media.js.list" />
+                </block>
+            </reference>
+        </reference>
+    </reference>
+
+</catalog_custom>
+
+<catalog_category_default translate="label">
+    <!-- Update category default with catalog custom -->
+    <update handle="catalog_custom" />
+</catalog_category_default>
+
+<catalog_category_layered translate="label">
+    <!-- Update category layered nav with catalog custom -->
+    <update handle="catalog_custom" />
+</catalog_category_layered>
+
+<catalog_product_view translate="label">
+    <!-- Change product page layout to 1 column -->
+    <update handle="page_one_column" />
+
+    <reference name="head">
+        <!-- Add in product view JS -->
+        <action method="addItem"><type>skin_js</type><name>assets/js/prodview.min.js</name></action>
+    </reference>
+
+    <reference name="content">
+        <reference name="product.info">
+
+            <!-- Unset Additional Data block -->
+            <action method="unsetChild"><name>product_additional_data</name></action>
+
+            <!-- Product page tabbed interface -->
+            <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs" template="catalog/product/view/tabs.phtml" >
+                <!-- Product Description -->
+                <action method="addTab" translate="title" module="catalog"><alias>description</alias><title>Product Description</title><block>catalog/product_view_description</block><template>catalog/product/view/description.phtml</template></action>
+                <!-- Addtioanl Info -->
+                <action method="addTab" translate="title" module="catalog"><alias>additional</alias><title>Additional Information</title><block>catalog/product_view_attributes</block><template>catalog/product/view/attributes.phtml</template></action>
+                <!-- Upsell Products -->
+                <action method="addTab" translate="title" module="catalog"><alias>upsell-products</alias><title>We Also Recommend</title><block>catalog/product_list_upsell</block><template>catalog/product/list/upsell.phtml</template></action>
+                <!-- Related Products -->
+                <action method="addTab" translate="title" module="tag"><alias>related-product</alias><title>Related Products</title><block>catalog/product_list_related</block><template>catalog/product/list/related.phtml</template></action>
+                <!-- Product Tags -->
+                <action method="addTab" translate="title" module="tag"><alias>product-tags</alias><title>Product Tags</title><block>tag/product_list</block><template>tag/list.phtml</template></action>
+            </block>
+        </reference>
+    </reference>
+</catalog_product_view>
+
+<PRODUCT_TYPE_configurable>
+    <reference name="head">
+        <action method="addItem"><type>skin_js</type><name>assets/js/configurableswatches/product-media.js</name></action>
+        <action method="addItem"><type>skin_js</type><name>assets/js/configurableswatches/swatches-product.js</name></action>
+    </reference>
+
+    <reference name="product.info.media">
+        <action method="setGalleryFilterHelper"><helper>configurableswatches/productimg</helper></action>
+        <action method="setGalleryFilterMethod"><method>filterImageInGallery</method></action>
+    </reference>
+    <reference name="product.info.media.after">
+        <block type="configurableswatches/catalog_media_js_product" name="configurableswatches.media.js.product" />
+    </reference>
+
+    <reference name="product.info.options.wrapper">
+        <reference name="product.info.options.configurable" >
+            <block type="core/text_list" name="product.info.options.configurable.renderers" as="attr_renderers" />
+            <block type="core/text_list" name="product.info.options.configurable.after" as="after" />
+        </reference>
+    </reference>
+
+    <reference name="product.info.options.configurable.renderers">
+        <block type="configurableswatches/catalog_product_view_type_configurable_swatches" template="configurableswatches/catalog/product/view/type/options/configurable/swatches.phtml" />
+    </reference>
+    <reference name="product.info.options.configurable.after">
+        <block type="core/template" template="configurableswatches/catalog/product/view/type/configurable/swatch-js.phtml" />
+    </reference>
+</PRODUCT_TYPE_configurable>
+<!--==============================================
+END Catalog.xml
+===============================================-->
+
+
+
+
+
+<!--==============================================
+Catalogsearch.xml
+===============================================-->
+<catalogsearch_custom>
+    <!-- Change catalog search page layout to 2 columns left -->
+    <update handle="page_two_columns_left" />
+</catalogsearch_custom>
+
+<catalogsearch_result_index translate="label">
+    <!-- Update catalog search with catalogsearch custom -->
+    <update handle="catalogsearch_custom" />
+</catalogsearch_result_index>
+
+<catalogsearch_advanced_index translate="label">
+    <!-- Update catalog advanced search with catalogsearch custom -->
+    <update handle="catalogsearch_custom" />
+</catalogsearch_advanced_index>
+<!--==============================================
+END Catalogsearch.xml
+===============================================-->
+
+</layout>

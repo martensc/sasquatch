@@ -1,0 +1,66 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento Enterprise.
+ *
+ * @category    Ash
+ * @package     Ash_Yetiee
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+/**
+ * Last order sidebar
+ *
+ * @see Mage_Sale_Block_Reorder_Sidebar
+ */
+?>
+<?php $_items = $this->getItems()?>
+<?php if($_items): ?>
+<div class="block block-reorder">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('My Orders') ?></span></strong>
+    </div>
+    <form method="post" action="<?php echo $this->getFormActionUrl() ?>" id="reorder-validate-detail">
+        <?php echo $this->getBlockHtml('formkey'); ?>
+        <div class="block-content">
+            <p class="block-subtitle"><?php echo $this->__('Last Ordered Items') ?></p>
+            <ol id="cart-sidebar-reorder">
+            <?php $_showAddButtonFlag = false ?>
+            <?php foreach ($_items as $_item): ?>
+                <li class="item">
+                    <?php if ($this->isItemAvailableForReorder($_item)): ?>
+                        <?php $_showAddButtonFlag = true ?>
+                        <input type="checkbox" name="order_items[]" id="reorder-item-<?php echo $_item->getId() ?>" value="<?php echo $_item->getId() ?>" title="<?php echo $this->__('Add to Cart') ?>" class="checkbox validate-one-required-by-name" />
+                    <?php endif; ?>
+                    <label id="reorder-item-<?php echo $_item->getId() ?>" class="product-name"><a href="<?php echo $_item->getProduct()->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></label>
+                    <?php if ($this->isItemAvailableForReorder($_item)): ?>
+                        <script type="text/javascript">
+                        //<![CDATA[
+                            $('reorder-item-<?php echo $_item->getId() ?>').advaiceContainer = 'cart-sidebar-reorder-advice-container';
+                        //]]>
+                        </script>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+            </ol>
+            <script type="text/javascript">decorateList('cart-sidebar-reorder')</script>
+            <div id="cart-sidebar-reorder-advice-container"></div>
+            <div class="actions">
+                <ul class="button-group">
+                    <?php if ($_showAddButtonFlag): ?>
+                        <li><button type="submit" title="<?php echo $this->__('Add to Cart') ?>" class="button tiny btn-cart"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></li>
+                    <?php endif; ?>
+                    <li><a class="button tiny secondary" href="<?php echo $this->getUrl('customer/account') ?>"><?php echo $this->__('View All'); ?></a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+<?php echo $this->getPagerHtml(); ?>
+<script type="text/javascript">
+//<![CDATA[
+    var reorderFormDetail = new VarienForm('reorder-validate-detail');
+//]]>
+</script>
+<?php endif ?>

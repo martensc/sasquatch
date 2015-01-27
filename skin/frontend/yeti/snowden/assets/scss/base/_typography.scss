@@ -1,0 +1,64 @@
+/////////////////////////
+// Typograpy
+/////////////////////////
+
+a {
+    transition: all 0.3s;
+}
+
+.std {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+// Magento Helpers
+.a-center {
+    text-align: center;
+}
+
+.a-right,
+.align-right {
+    text-align: right;
+}
+
+.no-display {
+    display: none !important;
+}
+
+.nobr,
+.nowrap {
+    white-space: nowrap;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.label-text {
+    @extend %label;
+}
+
+.link-edit {
+    font-size: 0.9rem;
+}
+
+.no-margin {
+    margin-bottom: 0 !important;
+}
+
+.availability {
+    font-size: 0.9rem;
+    font-style: italic;
+
+    &.in-stock span {
+        color: $success-color;
+    }
+
+    &.out-of-stock span {
+        color: $alert-color;
+    }
+}
+
+p.note {
+    font-size: 0.9rem;
+    font-style: italic;
+}

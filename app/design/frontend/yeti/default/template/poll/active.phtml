@@ -1,0 +1,50 @@
+<?php
+/**
+ * Wicked awesome responsive theme for Magento Enterprise.
+ *
+ * @category    Ash
+ * @package     Ash_Yetiee
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php if(isset($poll)) : ?>
+<script type="text/javascript">
+//<![CDATA[
+    function validatePollAnswerIsSelected()
+    {
+        var options = $$('input.poll_vote');
+        for( i in options ) {
+            if( options[i].checked == true ) {
+                return true;
+            }
+        }
+        return false;
+    }
+//]]>
+</script>
+<div class="block block-poll">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Community Poll') ?></span></strong>
+    </div>
+    <form id="pollForm" action="<?php echo $action ?>" method="post" onsubmit="return validatePollAnswerIsSelected();">
+        <div class="block-content">
+            <p class="block-subtitle"><?php echo $this->escapeHtml($poll->getPollTitle()); ?></p>
+            <?php if( $poll_answers ): ?>
+            <ul id="poll-answers" class="no-bullet">
+                <?php foreach( $poll_answers as $answer ): ?>
+                <li>
+                    <input type="radio" name="vote" class="radio poll_vote" id="vote_<?php echo $answer->getId() ?>" value="<?php echo $answer->getAnswerId() ?>" />
+                    <label for="vote_<?php echo $answer->getId() ?>"><?php echo $this->escapeHtml($answer->getAnswerTitle()) ?></label>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+            <script type="text/javascript">decorateList('poll-answers');</script>
+            <?php endif; ?>
+            <div class="actions">
+                <button type="submit" title="<?php echo $this->__('Vote') ?>" class="button tiny secondary no-margin"><?php echo $this->__('Vote') ?></button>
+            </div>
+        </div>
+    </form>
+</div>
+<?php endif; ?>
