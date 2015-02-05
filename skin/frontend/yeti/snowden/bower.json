@@ -2,7 +2,7 @@
   "name": "Yeti Foundation",
   "version": "1.14",
   "dependencies": {
-    "foundation": "~5.5.0",
+    "foundation": "~5.5.1",
     "enquire": "~2.1.2",
     "imagesloaded": "~3.1.8",
     "elevatezoom": "master"

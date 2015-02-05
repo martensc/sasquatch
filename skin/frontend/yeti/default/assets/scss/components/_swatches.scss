@@ -80,6 +80,10 @@ ul.configurable-swatch-list {
         float: left;
         zoom: 1;
         margin: 0 0.2rem 0 0;
+
+        &.selected > a {
+            border-color: $primary-color;
+        }
     }
 
     .products-grid & li {
