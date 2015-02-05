@@ -3,52 +3,52 @@
 /////////////////////////
 
 // Load Foundation setting overrides
-@import "libraries/settings";
+@import "../../../default/assets/scss/libraries/settings";
 
 // Load Foundation
 @import "foundation";
 
 // Libraries
-@import "libraries/mixins";
-@import "libraries/placeholder";
+@import "../../../default/assets/scss/libraries/mixins";
+@import "../../../default/assets/scss/libraries/placeholder";
 
 // Base
-@import "base/layout";
-@import "base/typography";
-@import "base/tables";
-@import "base/forms";
-@import "base/button";
+@import "../../../default/assets/scss/base/layout";
+@import "../../../default/assets/scss/base/typography";
+@import "../../../default/assets/scss/base/tables";
+@import "../../../default/assets/scss/base/forms";
+@import "../../../default/assets/scss/base/button";
 
 // Components
-@import "components/header";
-@import "components/footer";
-@import "components/top-links";
-@import "components/search";
-@import "components/nav";
-@import "components/block";
-@import "components/messages";
-@import "components/notice";
-@import "components/breadcrumbs";
-@import "components/product-sidebar";
-@import "components/swatches";
-@import "components/toolbar";
-@import "components/price";
-@import "components/add-to-links";
-@import "components/tabs";
-@import "components/ratings";
-@import "components/poll";
-@import "components/map-popup";
+@import "../../../default/assets/scss/components/header";
+@import "../../../default/assets/scss/components/footer";
+@import "../../../default/assets/scss/components/top-links";
+@import "../../../default/assets/scss/components/search";
+@import "../../../default/assets/scss/components/nav";
+@import "../../../default/assets/scss/components/block";
+@import "../../../default/assets/scss/components/messages";
+@import "../../../default/assets/scss/components/notice";
+@import "../../../default/assets/scss/components/breadcrumbs";
+@import "../../../default/assets/scss/components/product-sidebar";
+@import "../../../default/assets/scss/components/swatches";
+@import "../../../default/assets/scss/components/toolbar";
+@import "../../../default/assets/scss/components/price";
+@import "../../../default/assets/scss/components/add-to-links";
+@import "../../../default/assets/scss/components/tabs";
+@import "../../../default/assets/scss/components/ratings";
+@import "../../../default/assets/scss/components/poll";
+@import "../../../default/assets/scss/components/map-popup";
 
 // Sections
-@import "sections/product-list";
-@import "sections/product-view";
-@import "sections/cart";
-@import "sections/checkout";
-@import "sections/multi-address";
-@import "sections/account";
-@import "sections/reviews";
-@import "sections/send-to-friend";
-@import "sections/compare";
+@import "../../../default/assets/scss/sections/product-list";
+@import "../../../default/assets/scss/sections/product-view";
+@import "../../../default/assets/scss/sections/cart";
+@import "../../../default/assets/scss/sections/checkout";
+@import "../../../default/assets/scss/sections/multi-address";
+@import "../../../default/assets/scss/sections/account";
+@import "../../../default/assets/scss/sections/reviews";
+@import "../../../default/assets/scss/sections/send-to-friend";
+@import "../../../default/assets/scss/sections/compare";
 
 // Enterprise
-@import "enterprise/enterprise";
+@import "../../../default/assets/scss/enterprise/enterprise";
